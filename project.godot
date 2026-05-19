@@ -14,6 +14,11 @@ config/name="Dungeon"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+AudioManager="*uid://cuyfgso4wggqk"
+GameManager="*uid://bwn7joekhdf0m"
+
 [input]
 
 move_left={

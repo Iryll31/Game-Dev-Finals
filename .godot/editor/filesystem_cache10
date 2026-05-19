@@ -1,3 +1,16 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1779112429
+::res://::1779160789
 icon.svg::CompressedTexture2D::2752212952462469772::1779112422::1779112430::1::::<><><>0<>0<>42ffcc5c1117ad3429ec792b5e334b23<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
+::res://audio/::1779112518
+::res://audio/bgm/::1779112511
+::res://audio/sfx/::1779112518
+::res://autoload/::1779118057
+AudioManager.gd::GDScript::6226478574366380530::1779111147::0::1::::<>Node<><>0<>0<><>::
+GameManager.gd::GDScript::3959371912416214330::1779111147::0::1::::<>Node<><>0<>0<><>::
+::res://enemies/::1779112477
+::res://items/::1779112482
+::res://levels/::1779112489
+::res://player/::1779159588
+Player.gd::GDScript::4649460649615628701::1779119215::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::6181955707011405287::1779159588::0::1::::<><><>0<>0<><>::
+::res://ui/::1779112504
