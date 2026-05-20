@@ -1,0 +1,97 @@
+[gd_scene format=3 uid="uid://qgebamodebcm"]
+
+[ext_resource type="Script" uid="uid://dldaq36xpl5r4" path="res://scenes/checkpoint.gd" id="1_yyywg"]
+[ext_resource type="Texture2D" uid="uid://c8ygf7qgveg71" path="res://assets/32px fireplace.png" id="2_ywqth"]
+[ext_resource type="AudioStream" uid="uid://brys8vjwi2ho6" path="res://assets/fire.mp3" id="3_vsimk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ywqth"]
+size = Vector2(90, 70)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vsimk"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqsag"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c45tw"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55jpe"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vc08m"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl56q"]
+atlas = ExtResource("2_ywqth")
+region = Rect2(160, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ok2sx"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vsimk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yqsag")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c45tw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55jpe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vc08m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl56q")
+}],
+"loop": true,
+"name": &"new_animation",
+"speed": 6.0
+}]
+
+[sub_resource type="Gradient" id="Gradient_ywqth"]
+offsets = PackedFloat32Array(0, 0.686747)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_vsimk"]
+gradient = SubResource("Gradient_ywqth")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="Checkpoint" type="Area2D" unique_id=474978073]
+collision_mask = 2
+script = ExtResource("1_yyywg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1118263556]
+position = Vector2(15, 16)
+shape = SubResource("RectangleShape2D_ywqth")
+
+[node name="Marker2D" type="Marker2D" parent="." unique_id=297548926]
+position = Vector2(-11, 16)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=482302484]
+position = Vector2(15, 16)
+sprite_frames = SubResource("SpriteFrames_ok2sx")
+animation = &"new_animation"
+autoplay = "new_animation"
+frame_progress = 0.9173167
+
+[node name="PointLight2D" type="PointLight2D" parent="AnimatedSprite2D" unique_id=180043028]
+position = Vector2(-1, 1)
+scale = Vector2(2.53125, 2.5312502)
+color = Color(0.96862745, 0.8117647, 0.24705882, 1)
+energy = 1.75
+texture = SubResource("GradientTexture2D_vsimk")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="." unique_id=497722393]
+stream = ExtResource("3_vsimk")
+autoplay = true
+max_distance = 349.0

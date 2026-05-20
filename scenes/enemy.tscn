@@ -1,0 +1,81 @@
+[gd_scene format=3 uid="uid://dks8062ff3beh"]
+
+[ext_resource type="Script" uid="uid://cfdxajdxmdhrj" path="res://scripts/enemy.gd" id="1_n0g06"]
+[ext_resource type="Texture2D" uid="uid://fdt3evfybvnl" path="res://sprites/nanaya/shi26_002.png" id="1_pwjut"]
+[ext_resource type="Texture2D" uid="uid://dw0bk4hj21jvs" path="res://sprites/nanaya/shi26_003.png" id="2_n0g06"]
+[ext_resource type="Texture2D" uid="uid://c0jad5utbbjtn" path="res://sprites/nanaya/shi26_004.png" id="3_ar8e5"]
+[ext_resource type="Texture2D" uid="uid://dhudpth8pslhp" path="res://sprites/nanaya/shi26_005.png" id="4_doop2"]
+[ext_resource type="Texture2D" uid="uid://biuxxbg27ghys" path="res://sprites/nanaya/shi26_006.png" id="5_5hcft"]
+[ext_resource type="Texture2D" uid="uid://j2xnoqi3d1bt" path="res://sprites/nanaya/shi26_007.png" id="6_nnovl"]
+[ext_resource type="Texture2D" uid="uid://f2ci3t0d3fen" path="res://sprites/nanaya/shi26_008.png" id="7_jmwgi"]
+[ext_resource type="Texture2D" uid="uid://b6xu15gkw1igp" path="res://sprites/nanaya/shi26_009.png" id="8_g2u8i"]
+[ext_resource type="Texture2D" uid="uid://cmr3qmu0k73q0" path="res://sprites/nanaya/shi26_010.png" id="9_otto8"]
+[ext_resource type="Texture2D" uid="uid://b38oyahmgi2od" path="res://sprites/nanaya/shi26_011.png" id="10_8q82m"]
+[ext_resource type="PackedScene" uid="uid://vv1wwllpiw0w" path="res://scenes/killzone.tscn" id="11_epc7x"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o7rgc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pwjut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_n0g06")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ar8e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_doop2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_5hcft")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nnovl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_jmwgi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_g2u8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_otto8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_8q82m")
+}],
+"loop": true,
+"name": &"default",
+"speed": 11.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kdav3"]
+size = Vector2(14, 49)
+
+[node name="Enemy" type="Node2D" unique_id=193293020 node_paths=PackedStringArray("ray_cast_left", "ray_cast_right")]
+script = ExtResource("1_n0g06")
+ray_cast_left = NodePath("RayCastLeft")
+ray_cast_right = NodePath("RayCastRight")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1243232316]
+position = Vector2(-2, -42.000008)
+scale = Vector2(0.46875, 0.46875)
+sprite_frames = SubResource("SpriteFrames_o7rgc")
+autoplay = "default"
+frame_progress = 0.8991632
+
+[node name="killzone" parent="." unique_id=1808961880 instance=ExtResource("11_epc7x")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=120855962]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_kdav3")
+
+[node name="RayCastLeft" type="RayCast2D" parent="." unique_id=526871420]
+position = Vector2(-10, -8)
+target_position = Vector2(-9, 0)
+
+[node name="RayCastRight" type="RayCast2D" parent="." unique_id=184120851]
+position = Vector2(11, -8)
+target_position = Vector2(8, 0)

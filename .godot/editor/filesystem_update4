@@ -1,0 +1,18 @@
+res://scenes/Stage 2.tscn
+res://scenes/platform_move.tscn
+res://player.gd
+res://scenes/Stage 1.tscn
+res://player.tscn
+res://scripts/player.gd
+res://scenes/area_2d.tscn
+res://scenes/checkpoint.tscn
+res://scenes/checkpoint.gd
+res://scripts/torch.tscn
+res://scenes/player.tscn
+res://scenes/incubus_boy_dialogue.gd
+res://autoload/GameManager.gd
+res://scripts/killzone.gd
+res://scenes/stage_entrance.gd
+res://autoload/AudioManager.gd
+res://player/Player.gd
+res://scenes/Scene 3.tscn

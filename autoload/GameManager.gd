@@ -24,6 +24,9 @@ var health         : int = MAX_HEALTH
 var staff_collected: Array[bool] = [false, false, false, false]
 var current_floor  : int = 1
 var checkpoint_pos : Vector2 = Vector2.ZERO
+var checkpoint_scene_path : String = ""
+var transition_spawn_pos : Vector2 = Vector2.ZERO
+var transition_spawn_scene_path : String = ""
 var has_key        : bool = false
 
 # --- Floor scene paths (set these to your actual scene file paths) ---
@@ -47,6 +50,9 @@ func reset_run() -> void:
 	staff_collected = [false, false, false, false]
 	current_floor   = 1
 	checkpoint_pos  = Vector2.ZERO
+	checkpoint_scene_path = ""
+	transition_spawn_pos = Vector2.ZERO
+	transition_spawn_scene_path = ""
 	has_key         = false
 
 # --- Lives ---
@@ -99,8 +105,36 @@ func has_all_staff_pieces() -> bool:
 	return staff_collected.all(func(p): return p == true)
 
 # --- Checkpoint ---
-func set_checkpoint(pos: Vector2) -> void:
+func set_checkpoint(pos: Vector2, scene_path: String = "") -> void:
 	checkpoint_pos = pos
+	checkpoint_scene_path = scene_path
+	if checkpoint_scene_path == "" and get_tree().current_scene != null:
+		checkpoint_scene_path = get_tree().current_scene.scene_file_path
+
+func has_checkpoint() -> bool:
+	return checkpoint_pos != Vector2.ZERO and checkpoint_scene_path != ""
+
+func has_checkpoint_for_scene(scene_path: String) -> bool:
+	return has_checkpoint() and checkpoint_scene_path == scene_path
+
+func has_checkpoint_for_current_scene() -> bool:
+	if get_tree().current_scene == null:
+		return false
+
+	return has_checkpoint_for_scene(get_tree().current_scene.scene_file_path)
+
+func set_transition_spawn(pos: Vector2, scene_path: String) -> void:
+	transition_spawn_pos = pos
+	transition_spawn_scene_path = scene_path
+
+func consume_transition_spawn(scene_path: String) -> Vector2:
+	if transition_spawn_scene_path != scene_path:
+		return Vector2.ZERO
+
+	var spawn_pos := transition_spawn_pos
+	transition_spawn_pos = Vector2.ZERO
+	transition_spawn_scene_path = ""
+	return spawn_pos
 
 # --- Floor Transition ---
 func next_floor() -> void:

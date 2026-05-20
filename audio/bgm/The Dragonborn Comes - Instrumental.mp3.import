@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://vlag5sxcywpq"
+path="res://.godot/imported/The Dragonborn Comes - Instrumental.mp3-88582411019c56ec7a4eaf83f605005f.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/The Dragonborn Comes - Instrumental.mp3"
+dest_files=["res://.godot/imported/The Dragonborn Comes - Instrumental.mp3-88582411019c56ec7a4eaf83f605005f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

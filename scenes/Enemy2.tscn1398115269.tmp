@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c5jxjeyaja2gr"]
+
+[ext_resource type="Texture2D" uid="uid://wc2lnvickud" path="res://Sprites/butcher sprite.png" id="1"]
+[ext_resource type="Script" uid="uid://bi5hwfncjt23k" path="res://scripts/enemy2.gd" id="1_i1eqr"]
+[ext_resource type="PackedScene" uid="uid://vv1wwllpiw0w" path="res://scenes/killzone.tscn" id="3_wna3i"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xemqh"]
+size = Vector2(14, 49)
+
+[node name="Enemy" type="AnimatedSprite2D" unique_id=532411968]
+script = ExtResource("1_i1eqr")
+
+[node name="ButcherSprite" type="Sprite2D" parent="." unique_id=950367797]
+position = Vector2(0.99999994, -24)
+scale = Vector2(0.027918782, 0.027918784)
+texture = ExtResource("1")
+
+[node name="killzone" parent="." unique_id=1808961880 instance=ExtResource("3_wna3i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1880249907]
+position = Vector2(0, -25)
+shape = SubResource("RectangleShape2D_xemqh")
