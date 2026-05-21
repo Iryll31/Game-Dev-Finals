@@ -23,6 +23,11 @@ func _process(_delta: float) -> void:
 		_activate_checkpoint()
 
 
+func _exit_tree() -> void:
+	if _player_nearby and AudioManager != null:
+		AudioManager.stop_checkpoint_bgm(0.0)
+
+
 func _on_body_entered(body: Node2D) -> void:
 	if not (body is CharacterBody2D):
 		return

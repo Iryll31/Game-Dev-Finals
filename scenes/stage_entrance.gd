@@ -8,6 +8,7 @@ extends Area2D
 var _player_nearby := false
 var _is_entering := false
 var _prompt_label: Label
+var _nearby_player: CharacterBody2D
 
 
 func _ready() -> void:
@@ -25,6 +26,7 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	_player_nearby = true
+	_nearby_player = body as CharacterBody2D
 	_show_prompt(prompt_text)
 
 
@@ -33,6 +35,8 @@ func _on_body_exited(body: Node2D) -> void:
 		return
 
 	_player_nearby = false
+	if body == _nearby_player:
+		_nearby_player = null
 	_hide_prompt()
 
 
@@ -68,5 +72,14 @@ func _enter_target_scene() -> void:
 	monitoring = false
 	_hide_prompt()
 	if use_target_spawn:
+		var current_scene := get_tree().current_scene
+		if current_scene != null and current_scene.scene_file_path == target_scene and _nearby_player != null:
+			_nearby_player.global_position = target_spawn_position
+			_nearby_player.velocity = Vector2.ZERO
+			await get_tree().physics_frame
+			monitoring = true
+			_is_entering = false
+			return
+
 		GameManager.set_transition_spawn(target_spawn_position, target_scene)
 	get_tree().change_scene_to_file(target_scene)

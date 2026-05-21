@@ -1,8 +1,10 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1779249555
+::res://::1779355633
 coin.gd::GDScript::-1::1772974221::0::1::::<>Area2D<><>0<>0<><>::
 coin.tscn::PackedScene::5574192010617270433::1779164950::0::1::::<><><>0<>0<><>::uid://bfin8ou5yff8b::::res://coin.gd<>uid://bencmjthqahip::::res://sprites/coin.png
-enemy.tscn::PackedScene::6710301248426430034::1779175062::0::1::::<><><>0<>0<><>::uid://d4ndyeqop66cc::::res://sprites/slime_green.png<>uid://vv1wwllpiw0w::::res://killzone.tscn
+dungeontileset.tres::TileSet::5239006851018745260::1779355633::0::1::::<><><>0<>0<><>::uid://dypi3rv7edewb::::res://assets/Tilesetv3.png
+enemy.gd::GDScript::8234081674844574773::1779278294::0::1::::<>Node2D<><>0<>0<><>::
+enemy.tscn::PackedScene::7900359262810152995::1779278294::0::1::::<><><>0<>0<><>::uid://cfdxajdxmdhrj::::res://enemy.gd<>uid://fdt3evfybvnl::::res://sprites/nanaya/shi26_002.png<>uid://dw0bk4hj21jvs::::res://sprites/nanaya/shi26_003.png<>uid://c0jad5utbbjtn::::res://sprites/nanaya/shi26_004.png<>uid://dhudpth8pslhp::::res://sprites/nanaya/shi26_005.png<>uid://biuxxbg27ghys::::res://sprites/nanaya/shi26_006.png<>uid://j2xnoqi3d1bt::::res://sprites/nanaya/shi26_007.png<>uid://f2ci3t0d3fen::::res://sprites/nanaya/shi26_008.png<>uid://b6xu15gkw1igp::::res://sprites/nanaya/shi26_009.png<>uid://cmr3qmu0k73q0::::res://sprites/nanaya/shi26_010.png<>uid://b38oyahmgi2od::::res://sprites/nanaya/shi26_011.png<>uid://vv1wwllpiw0w::::res://killzone.tscn
 game.tscn::PackedScene::8880361348019938066::1779166572::0::1::::<><><>0<>0<><>::uid://b63kouv8rkn0m::::res://player.tscn<>uid://b2nw2q84qrnn::::res://sprites/world_tileset.png<>res://game_manager.gd<>uid://b7rerio5037ja::::res://platform.tscn<>uid://bxygcpsptlnnt::::res://sprites/horse.png<>uid://clogel8rl4por::::res://coin.tscn<>uid://vv1wwllpiw0w::::res://killzone.tscn<>uid://dks8062ff3beh::::res://enemy.tscn<>uid://dc4qub26mvfeg::::res://fonts/PixelOperator8.ttf
 game_manager.gd::GDScript::-1::1772974221::0::1::::<>Node<><>0<>0<><>::
 horse.tscn::PackedScene::1318341370156557003::1779164950::0::1::::<><><>0<>0<><>::uid://bxygcpsptlnnt::::res://sprites/horse.png
@@ -11,8 +13,9 @@ killzone.gd::GDScript::-1::1779265922::0::1::::<>Area2D<><>0<>0<><>::
 killzone.tscn::PackedScene::1518936751538498320::1779164950::0::1::::<><><>0<>0<><>::uid://bfp7athlmqmx2::::res://killzone.gd
 map 1 test.tscn::PackedScene::5714709505454449333::1779186196::0::1::::<><><>0<>0<><>::uid://dypi3rv7edewb::::res://assets/Tilesetv3.png
 platform.tscn::PackedScene::4667831771608274530::1779164950::0::1::::<><><>0<>0<><>::uid://hyuse7jykhhg::::res://sprites/platforms.png
+player.gd::GDScript::3048761702823892766::1779278294::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::8211483300107872844::1779249555::0::1::::<><><>0<>0<><>::uid://dogplti5o8m4j::::res://sprites/ryougi/ryo0000.png<>uid://brw4gpjwfu7ml::::res://scripts/player.gd<>uid://dnem6gbri6s1p::::res://sprites/ryougi/ryo0001.png<>uid://b5x1xi07mik8k::::res://sprites/ryougi/ryo0002.png<>uid://c4k3w3tlwgfen::::res://sprites/ryougi/ryo0003.png<>uid://ca8rhpob8qxqm::::res://sprites/ryougi/ryo0004.png<>uid://i5fthlytwdmx::::res://sprites/ryougi/ryo0005.png<>uid://fyyr86qdwl61::::res://sprites/ryougi/ryo0006.png<>uid://dtap0xdsagrhw::::res://sprites/ryougi/jump/ryo1508.png<>uid://ip71qnc7besh::::res://sprites/ryougi/run/ryo2602.png<>uid://drcam262qwbmg::::res://sprites/ryougi/jump/ryo1509.png<>uid://bcacf7g0kafq3::::res://sprites/ryougi/run/ryo2603.png<>uid://dn11lhomlux7k::::res://sprites/ryougi/jump/ryo1510.png<>uid://baeapnp5lulsl::::res://sprites/ryougi/run/ryo2604.png<>uid://x4ft8v0xloq0::::res://sprites/ryougi/run/ryo2605.png<>uid://cp5fk2qdislel::::res://sprites/ryougi/run/ryo2606.png<>uid://djk72al4fibqo::::res://sprites/ryougi/run/ryo2607.png<>uid://y5x7s24q44rn::::res://sprites/ryougi/run/ryo2608.png<>uid://bwm858esupiqk::::res://sprites/ryougi/run/ryo2609.png<>uid://b1lfrg5ksmtfg::::res://sprites/ryougi/run/ryo2610.png<>uid://cy4j1ofuqj5sk::::res://sprites/ryougi/run/ryo2611.png
-::res://assets/::1779276508
+::res://assets/::1779358241
 32px fireplace.png::CompressedTexture2D::7138993210229744802::1779251555::1779251555::1::::<><><>0<>0<>940d55d9c76ac043a0eee2a71a77ecaf<>res://.godot/imported/32px fireplace.png-5e41b7f4a5286cf13a575fcbe789f765.ctex::
 Background_0.png::CompressedTexture2D::4553081489947728887::1779187289::1779187292::1::::<><><>0<>0<>8584d488250967ec821c22515287e347<>res://.godot/imported/Background_0.png-ccfa0f0d277c40143d1e8ec3db90eaee.ctex::
 Background_1.png::CompressedTexture2D::4229442134774618569::1779187289::1779187292::1::::<><><>0<>0<>6a8ffd74f887440abb778d1692ad8449<>res://.godot/imported/Background_1.png-2dba1b6a18ca04c8cd366425fce2eff9.ctex::
@@ -26,25 +29,29 @@ DeepCaveBG-Layer3.png::CompressedTexture2D::2798431640732037653::1779276508::177
 DeepCaveTile.png::CompressedTexture2D::5211498430753645363::1779276497::1779276510::1::::<><><>0<>0<>9db4998a1f51ce8eca3df433fdddea25<>res://.godot/imported/DeepCaveTile.png-34cc2a9f98c9b15ad3bb516a4a359fb5.ctex::
 deuslower-atmosphere-dark-fantasy-dungeon-synth-248210.mp3::AudioStreamMP3::5566638570938432436::1779189411::1779189417::1::::<><><>0<>0<>adb001c4023643766e98a9a596575c25<>res://.godot/imported/deuslower-atmosphere-dark-fantasy-dungeon-synth-248210.mp3-fa1d9756d117862ac08611bf053f5152.mp3str::
 fire.mp3::AudioStreamMP3::3630329046610676719::1779256175::1779256214::1::::<><><>0<>0<>b8c6801bd1a26d25d4fc63553ef5e876<>res://.godot/imported/fire.mp3-fb89841d9b5c12e1edd937d86e2ef96c.mp3str::
+God rays.gdshader::Shader::4786943993997278306::1779355633::0::1::::<><><>0<>0<><>::
 Grass_background_1.png::CompressedTexture2D::1938182348341163076::1779187289::1779187292::1::::<><><>0<>0<>327b55ca99fb5a40f0f3a77e53f37b6d<>res://.godot/imported/Grass_background_1.png-51ba956eb09e291afe72a2365f160f5a.ctex::
 Grass_background_2.png::CompressedTexture2D::7142259762631018151::1779187289::1779187292::1::::<><><>0<>0<>733843fe7af1ad6c7a9a0ee67e2cc66f<>res://.godot/imported/Grass_background_2.png-9f05b7874c0013bedb0dc76e1042133d.ctex::
 incubus boy.webp::CompressedTexture2D::4009266349418661591::1779258221::1779258243::1::::<><><>0<>0<>0369cb9b029ee766de0d0e9f5e2b558d<>res://.godot/imported/incubus boy.webp-55bad55a268c145b7cc609b7f4d3d59c.ctex::
 Interior-01.png::CompressedTexture2D::589133973059117382::1779255117::1779255142::1::::<><><>0<>0<>ebd62b99915e672894b4442afac6d0da<>res://.godot/imported/Interior-01.png-7876e43e07908ff9d38617b3fb93e004.ctex::
-God rays.gdshader::Shader::4786943993997278306::1779255744::0::1::::<><><>0<>0<><>::
 Salt.png::CompressedTexture2D::7261072214674334423::1779187289::1779187292::1::::<><><>0<>0<>8057fb9495e0bb1e8a232a2c3b8e872a<>res://.godot/imported/Salt.png-cf78e21928bfe31f96091c12593a4737.ctex::
 spr_torch.png::CompressedTexture2D::6817653284969634817::1779254425::1779254428::1::::<><><>0<>0<>85acefcb208e07deb11b615c489874b8<>res://.godot/imported/spr_torch.png-d7801a3b646b1d01c5b8d2c612c27ded.ctex::
 Tiles.png::CompressedTexture2D::3566619773213888318::1779187289::1779187292::1::::<><><>0<>0<>3147a24fba6fc41d971ba3959c687ad1<>res://.godot/imported/Tiles.png-606650b3698afd99ea52e71152f0494f.ctex::
 Tilesetv3.png::CompressedTexture2D::8875296629671693205::1779178336::1779178337::1::::<><><>0<>0<>7ce2e1bb26f05b6a65ab01720518adeb<>res://.godot/imported/Tilesetv3.png-f54849c3da95b52ad9020629d86fa93a.ctex::
 Tree-Assets.png::CompressedTexture2D::240485241590384463::1779255117::1779255142::1::::<><><>0<>0<>c82874ae5907e1a08cb94c994c0d0b19<>res://.godot/imported/Tree-Assets.png-5bfcc417118ad94251ce7df147850765.ctex::
+welcome to the underground.mp3::AudioStreamMP3::1510272741194636681::1779358229::1779358241::1::::<><><>0<>0<>aa539fc915045f7535d29579db9ab216<>res://.godot/imported/welcome to the underground.mp3-3d11189acffc56343f1baaf9e07e9827.mp3str::
+welcome to the underground.ogv::VideoStreamTheora::6135448481626208581::1779357845::0::1::::<><><>0<>0<><>::
 ::res://audio/::1779164241
 ::res://audio/bgm/::1779275867
 The Dragonborn Comes - Instrumental.mp3::AudioStreamMP3::1496686191012407462::1779275679::1779275867::1::::<><><>0<>0<>d6749ced225ff18b0db158724ea0a70e<>res://.godot/imported/The Dragonborn Comes - Instrumental.mp3-88582411019c56ec7a4eaf83f605005f.mp3str::
-::res://audio/sfx/::1779275883
+::res://audio/sfx/::1779360969
 brut-slow.mp3::AudioStreamMP3::1424457050826685683::1779266869::1779268293::1::::<><><>0<>0<>c22b5105f8f3906657c4aed7793eda25<>res://.godot/imported/brut-slow.mp3-088c0cf9613385956ccb2a675e435ad5.mp3str::
+cave.mp3::AudioStreamMP3::7525929810535739615::1779346365::1779346384::1::::<><><>0<>0<>751e912a1495a07d6ccf1cffdeb2543e<>res://.godot/imported/cave.mp3-4d4a7c7183a3a0125a33780cfb24e52c.mp3str::
 dungeon sound.mp3::AudioStreamMP3::434038989831723271::1779275855::1779275883::1::::<><><>0<>0<>af782b137db9e168347f30f8f000c28c<>res://.godot/imported/dungeon sound.mp3-965384b891519d3b036bed8998b13c0c.mp3str::
 outside sound.mp3::AudioStreamMP3::1981161523798086010::1779275834::1779275883::1::::<><><>0<>0<>074d6abfbe99611196d1ca6fa6a11a64<>res://.godot/imported/outside sound.mp3-f104537d575301ddbc99ffd1075d6c90.mp3str::
+scene 4 ambience.mp3::AudioStreamMP3::6493609056332084399::1779360928::1779360970::1::::<><><>0<>0<>42a331d7a7fd676bee69c34cb09a1d15<>res://.godot/imported/scene 4 ambience.mp3-0ec340fa3816f2f11a3b619a2c2d196a.mp3str::
 ::res://autoload/::1779164241
-AudioManager.gd::GDScript::6226478574366380530::1779276080::0::1::::<>Node<><>0<>0<><>::
+AudioManager.gd::GDScript::6226478574366380530::1779347922::0::1::::<>Node<><>0<>0<><>::
 GameManager.gd::GDScript::3959371912416214330::1779268879::0::1::::<>Node<><>0<>0<><>::
 ::res://enemies/::1779164241
 ::res://fonts/::1779173034
@@ -57,7 +64,9 @@ time_for_adventure.mp3::AudioStreamMP3::8694740437199374841::1779173035::1779173
 ::res://player/::1779166314
 Player.gd::GDScript::4649460649615628701::1779268658::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::6181955707011405287::1779166314::0::1::::<><><>0<>0<><>::
-::res://scenes/::1779276317
+::res://scenes/::1779360841
+checkpoint.gd::GDScript::7937562556670585407::1779347851::0::1::::<>Area2D<><>0<>0<><>::
+checkpoint.tscn::PackedScene::1135652437675763940::1779276080::0::1::::<><><>0<>0<><>::uid://dldaq36xpl5r4::::res://scenes/checkpoint.gd<>uid://c8ygf7qgveg71::::res://assets/32px fireplace.png<>uid://brys8vjwi2ho6::::res://assets/fire.mp3
 coin.tscn::PackedScene::5574192010617270433::1779173030::0::1::::<><><>0<>0<><>::uid://bfin8ou5yff8b::::res://scripts/coin.gd<>uid://bencmjthqahip::::res://sprites/coin.png
 Enemy2.tscn::PackedScene::6898498886473249369::1779173030::0::1::::<><><>0<>0<><>::uid://bi5hwfncjt23k::::res://scripts/enemy2.gd<>uid://brrjs0niuyoy7::::res://sprites/Neco-Arc.png<>uid://vv1wwllpiw0w::::res://scenes/killzone.tscn
 enemy.tscn::PackedScene::7900359262810152995::1779173030::0::1::::<><><>0<>0<><>::uid://cfdxajdxmdhrj::::res://scripts/enemy.gd<>uid://fdt3evfybvnl::::res://sprites/nanaya/shi26_002.png<>uid://dw0bk4hj21jvs::::res://sprites/nanaya/shi26_003.png<>uid://c0jad5utbbjtn::::res://sprites/nanaya/shi26_004.png<>uid://dhudpth8pslhp::::res://sprites/nanaya/shi26_005.png<>uid://biuxxbg27ghys::::res://sprites/nanaya/shi26_006.png<>uid://j2xnoqi3d1bt::::res://sprites/nanaya/shi26_007.png<>uid://f2ci3t0d3fen::::res://sprites/nanaya/shi26_008.png<>uid://b6xu15gkw1igp::::res://sprites/nanaya/shi26_009.png<>uid://cmr3qmu0k73q0::::res://sprites/nanaya/shi26_010.png<>uid://b38oyahmgi2od::::res://sprites/nanaya/shi26_011.png<>uid://vv1wwllpiw0w::::res://scenes/killzone.tscn
@@ -70,18 +79,21 @@ incubus_boy_dialogue.gd::GDScript::1021229663892378227::1779273637::0::1::::<>Ar
 killzone.tscn::PackedScene::1518936751538498320::1779173031::0::1::::<><><>0<>0<><>::uid://bfp7athlmqmx2::::res://scripts/killzone.gd
 necoarcdance.tscn::PackedScene::902037838986781215::1779173030::0::1::::<><><>0<>0<><>::uid://brrjs0niuyoy7::::res://sprites/Neco-Arc.png
 platform dungeon.tscn::PackedScene::4354553720882484601::1779186561::0::1::::<><><>0<>0<><>::uid://dypi3rv7edewb::::res://assets/Tilesetv3.png
+platform move cave.tscn::PackedScene::25538363015485687::1779355426::0::1::::<><><>0<>0<><>::uid://cgiqvad3736ih::::res://assets/DeepCaveTile.png<>uid://c0762472ngony::::res://scripts/platform_move.gd
 platform.tscn::PackedScene::4667831771608274530::1779173030::0::1::::<><><>0<>0<><>::uid://hyuse7jykhhg::::res://sprites/platforms.png
 platform_move.tscn::PackedScene::364556068205070185::1779249283::0::1::::<><><>0<>0<><>::uid://c0762472ngony::::res://scripts/platform_move.gd<>uid://hyuse7jykhhg::::res://sprites/platforms.png
 player.tscn::PackedScene::1892271610181560945::1779256289::0::1::::<><><>0<>0<><>::uid://dogplti5o8m4j::::res://sprites/ryougi/ryo0000.png<>uid://brw4gpjwfu7ml::::res://scripts/player.gd<>uid://dnem6gbri6s1p::::res://sprites/ryougi/ryo0001.png<>uid://b5x1xi07mik8k::::res://sprites/ryougi/ryo0002.png<>uid://c4k3w3tlwgfen::::res://sprites/ryougi/ryo0003.png<>uid://ca8rhpob8qxqm::::res://sprites/ryougi/ryo0004.png<>uid://i5fthlytwdmx::::res://sprites/ryougi/ryo0005.png<>uid://fyyr86qdwl61::::res://sprites/ryougi/ryo0006.png<>uid://dtap0xdsagrhw::::res://sprites/ryougi/jump/ryo1508.png<>uid://ip71qnc7besh::::res://sprites/ryougi/run/ryo2602.png<>uid://drcam262qwbmg::::res://sprites/ryougi/jump/ryo1509.png<>uid://bcacf7g0kafq3::::res://sprites/ryougi/run/ryo2603.png<>uid://dn11lhomlux7k::::res://sprites/ryougi/jump/ryo1510.png<>uid://baeapnp5lulsl::::res://sprites/ryougi/run/ryo2604.png<>uid://x4ft8v0xloq0::::res://sprites/ryougi/run/ryo2605.png<>uid://cp5fk2qdislel::::res://sprites/ryougi/run/ryo2606.png<>uid://djk72al4fibqo::::res://sprites/ryougi/run/ryo2607.png<>uid://y5x7s24q44rn::::res://sprites/ryougi/run/ryo2608.png<>uid://bwm858esupiqk::::res://sprites/ryougi/run/ryo2609.png<>uid://b1lfrg5ksmtfg::::res://sprites/ryougi/run/ryo2610.png<>uid://cy4j1ofuqj5sk::::res://sprites/ryougi/run/ryo2611.png
-checkpoint.tscn::PackedScene::1135652437675763940::1779276080::0::1::::<><><>0<>0<><>::uid://dldaq36xpl5r4::::res://scenes/checkpoint.gd<>uid://c8ygf7qgveg71::::res://assets/32px fireplace.png<>uid://brys8vjwi2ho6::::res://assets/fire.mp3
-checkpoint.gd::GDScript::7937562556670585407::1779275834::0::1::::<>Area2D<><>0<>0<><>::
-Scene 3.tscn::PackedScene::6526034256838692847::1779276317::0::1::::<><><>0<>0<><>::
+Scene 3.tscn::PackedScene::6526034256838692847::1779360841::0::1::::<><><>0<>0<><>::uid://cgiqvad3736ih::::res://assets/DeepCaveTile.png<>uid://bpgf42cenr3xk::::res://assets/DeepCaveBG-Layer2.png<>uid://dq2rm74a8ghpb::::res://assets/DeepCaveBG-Layer1.png<>uid://cnoiov2keku7v::::res://map 1 test.tscn<>uid://gyr3l6eq2jeh::::res://assets/DeepCaveBG-Base.png<>uid://cgv2xbc3osq1i::::res://dungeontileset.tres<>uid://17vo4edfrmaj::::res://scenes/player.tscn<>uid://bf4t034r86dt2::::res://assets/DeepCaveBG-Layer3.png<>uid://durvhqhkd52ux::::res://scenes/spike trap cave.tscn<>uid://bxygcpsptlnnt::::res://sprites/horse.png<>uid://qgebamodebcm::::res://scenes/checkpoint.tscn<>uid://dfhu7144cvlh4::::res://audio/sfx/cave.mp3<>uid://mtbc4kh4gs74::::res://scripts/torch.tscn<>uid://cjkfdkxsx5vbm::::res://scenes/stage_entrance.gd<>uid://mmu30t3wc4f::::res://scenes/platform move cave.tscn
+Scene 4.tscn::PackedScene::2404017505152677849::1779360358::0::1::::<><><>0<>0<><>::uid://cnoiov2keku7v::::res://map 1 test.tscn<>uid://17vo4edfrmaj::::res://scenes/player.tscn<>uid://cgv2xbc3osq1i::::res://dungeontileset.tres<>uid://be3i1b013a5i7::::res://scenes/spiike trap.tscn<>uid://ctob670m8cp2t::::res://assets/welcome to the underground.ogv<>uid://vrt8a6wug7ij::::res://assets/welcome to the underground.mp3<>uid://mtbc4kh4gs74::::res://scripts/torch.tscn<>uid://cjkfdkxsx5vbm::::res://scenes/stage_entrance.gd
 spiike trap.tscn::PackedScene::2725510894304797288::1779267827::0::1::::<><><>0<>0<><>::uid://bq2xya2h3dfuk::::res://assets/Tiles.png
+spike trap cave.tscn::PackedScene::8599421754711204555::1779348665::0::1::::<><><>0<>0<><>::uid://bfp7athlmqmx2::::res://scripts/killzone.gd<>uid://cnoiov2keku7v::::res://map 1 test.tscn<>uid://cgv2xbc3osq1i::::res://dungeontileset.tres
 Stage 1.tscn::PackedScene::3878080139789614028::1779276297::0::1::::<><><>0<>0<><>::uid://dypi3rv7edewb::::res://assets/Tilesetv3.png<>uid://17vo4edfrmaj::::res://scenes/player.tscn<>uid://b54st7qshq7jv::::res://assets/Background_0.png<>uid://dks8062ff3beh::::res://scenes/enemy.tscn<>uid://b1i1j85ts3i7j::::res://assets/Background_1.png<>uid://clkryu52so3n1::::res://assets/deuslower-atmosphere-dark-fantasy-dungeon-synth-248210.mp3<>uid://3hxo8u85jgxm::::res://audio/sfx/outside sound.mp3<>uid://bq2xya2h3dfuk::::res://assets/Tiles.png<>uid://qgebamodebcm::::res://scenes/checkpoint.tscn<>uid://bxeebb373jxwh::::res://assets/incubus boy.webp<>uid://vv1wwllpiw0w::::res://killzone.tscn<>uid://osxrd5de0rf4::::res://scenes/incubus_boy_dialogue.gd<>uid://cjkfdkxsx5vbm::::res://scenes/stage_entrance.gd<>uid://be3i1b013a5i7::::res://scenes/spiike trap.tscn
-Stage 2.tscn::PackedScene::4552273075884267684::1779276130::0::1::::<><><>0<>0<><>::uid://cnoiov2keku7v::::res://map 1 test.tscn<>uid://bq2xya2h3dfuk::::res://assets/Tiles.png<>uid://dypi3rv7edewb::::res://assets/Tilesetv3.png<>uid://17vo4edfrmaj::::res://scenes/player.tscn<>uid://dks8062ff3beh::::res://scenes/enemy.tscn<>uid://b3bm4mj66ps6l::::res://scenes/platform dungeon.tscn<>uid://qgebamodebcm::::res://scenes/checkpoint.tscn<>uid://mtbc4kh4gs74::::res://scripts/torch.tscn<>uid://dldaq36xpl5r4::::res://scenes/checkpoint.gd<>uid://cjkfdkxsx5vbm::::res://scenes/stage_entrance.gd<>uid://be3i1b013a5i7::::res://scenes/spiike trap.tscn<>uid://ggis86b6kdn8::::res://audio/sfx/dungeon sound.mp3
-stage_entrance.gd::GDScript::5425494241628418146::1779268879::0::1::::<>Area2D<><>0<>0<><>::
+Stage 2.tscn::PackedScene::4552273075884267684::1779352696::0::1::::<><><>0<>0<><>::uid://cnoiov2keku7v::::res://map 1 test.tscn<>uid://bq2xya2h3dfuk::::res://assets/Tiles.png<>uid://dypi3rv7edewb::::res://assets/Tilesetv3.png<>uid://17vo4edfrmaj::::res://scenes/player.tscn<>uid://cgv2xbc3osq1i::::res://dungeontileset.tres<>uid://dks8062ff3beh::::res://enemy.tscn<>uid://b3bm4mj66ps6l::::res://scenes/platform dungeon.tscn<>uid://qgebamodebcm::::res://scenes/checkpoint.tscn<>uid://mtbc4kh4gs74::::res://scripts/torch.tscn<>uid://dldaq36xpl5r4::::res://scenes/checkpoint.gd<>uid://cjkfdkxsx5vbm::::res://scenes/stage_entrance.gd<>uid://be3i1b013a5i7::::res://scenes/spiike trap.tscn<>uid://ggis86b6kdn8::::res://audio/sfx/dungeon sound.mp3
+stage_entrance.gd::GDScript::5425494241628418146::1779359412::0::1::::<>Area2D<><>0<>0<><>::
 ::res://scripts/::1779275084
+checkpoint.tscn::PackedScene::7484353784618386699::1779253326::0::1::::<><><>0<>0<><>::uid://dldaq36xpl5r4::::res://scenes/checkpoint.gd
 coin.gd::GDScript::2754728943638895327::1779173031::0::1::::<>Area2D<><>0<>0<><>::
+coin.tscn::PackedScene::4626831970845465044::1779251424::0::1::::<><><>0<>0<><>::uid://dldaq36xpl5r4::::res://scenes/checkpoint.gd
 enemy2.gd::GDScript::3010327354637311318::1779173031::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
 enemy.gd::GDScript::5131375688077913951::1779180515::0::1::::<>Node2D<><>0<>0<><>::
 game_manager.gd::GDScript::4161056300387118990::1779180515::0::1::::<>Node<><>0<>0<><>::
@@ -89,10 +101,8 @@ God rays.gdshader::Shader::5445163938552368298::1779254822::0::1::::<><><>0<>0<>
 horse.gd::GDScript::7750648108562109571::1779173031::0::1::::<>Area2D<><>0<>0<><>::
 horse_2.gd::GDScript::9004660223453986279::1779173031::0::1::::<>Area2D<><>0<>0<><>::
 killzone.gd::GDScript::2770274521236439353::1779268578::0::1::::<>Area2D<><>0<>0<><>::
-platform_move.gd::GDScript::6595554563533393898::1779178929::0::1::::<>Node2D<><>0<>0<><>::
+platform_move.gd::GDScript::6595554563533393898::1779355626::0::1::::<>Node2D<><>0<>0<><>::
 player.gd::GDScript::3626819646443199891::1779274772::0::1::::<>CharacterBody2D<><>0<>0<><>::
-coin.tscn::PackedScene::4626831970845465044::1779251424::0::1::::<><><>0<>0<><>::uid://dldaq36xpl5r4::::res://scenes/checkpoint.gd
-checkpoint.tscn::PackedScene::7484353784618386699::1779253326::0::1::::<><><>0<>0<><>::uid://dldaq36xpl5r4::::res://scenes/checkpoint.gd
 torch.tscn::PackedScene::881555128546358405::1779275084::0::1::::<><><>0<>0<><>::uid://c4er0vc2yuwi0::::res://assets/spr_torch.png<>uid://brys8vjwi2ho6::::res://assets/fire.mp3
 ::res://sounds/::1779173035
 coin.wav::AudioStreamWAV::9094978641472754254::1779173035::1779173035::1::::<><><>0<>0<>05eb69afa26451e0deb8b24123c0dcc5<>res://.godot/imported/coin.wav-fc7782b3c19e2c95d42ef7b3c218a810.sample::

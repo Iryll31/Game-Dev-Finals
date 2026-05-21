@@ -1,14 +1,14 @@
+CollisionShape2D
+AudioStreamPlayer2D
+VideoStreamPlayer
 Sprite2D
 Parallax2D
 ParallaxLayer
 ParallaxBackground
 TileMap
-CollisionShape2D
 Node2D
 Node3D
 AudioListener2D
-AudioStreamPlayer2D
 TileMapLayer
 DirectionalLight2D
 PointLight2D
-AnimatedSprite2D

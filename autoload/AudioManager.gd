@@ -17,6 +17,8 @@ var _sfx_idx  : int = 0
 var _checkpoint_player: AudioStreamPlayer
 var _checkpoint_near_count := 0
 var _checkpoint_faded_players: Dictionary = {}
+var _checkpoint_tween: Tween
+var _background_tweens: Dictionary = {}
 
 # --- Stream references (assign in Inspector or via load()) ---
 ## BGM
@@ -97,24 +99,26 @@ func play_checkpoint_bgm(fade_time: float = CHECKPOINT_FADE_TIME) -> void:
 	if _checkpoint_near_count > 1:
 		return
 
+	_stop_tween(_checkpoint_tween)
 	_fade_background_players(-80.0, fade_time)
 	if _checkpoint_player.stream == null:
 		return
 
 	_checkpoint_player.volume_db = -80.0
 	_checkpoint_player.play()
-	var tween := create_tween()
-	tween.tween_property(_checkpoint_player, "volume_db", CHECKPOINT_VOLUME_DB, fade_time)
+	_checkpoint_tween = create_tween()
+	_checkpoint_tween.tween_property(_checkpoint_player, "volume_db", CHECKPOINT_VOLUME_DB, fade_time)
 
 func stop_checkpoint_bgm(fade_time: float = CHECKPOINT_FADE_TIME) -> void:
 	_checkpoint_near_count = max(_checkpoint_near_count - 1, 0)
 	if _checkpoint_near_count > 0:
 		return
 
+	_stop_tween(_checkpoint_tween)
 	if _checkpoint_player.playing:
-		var checkpoint_tween := create_tween()
-		checkpoint_tween.tween_property(_checkpoint_player, "volume_db", -80.0, fade_time)
-		checkpoint_tween.tween_callback(_checkpoint_player.stop)
+		_checkpoint_tween = create_tween()
+		_checkpoint_tween.tween_property(_checkpoint_player, "volume_db", -80.0, fade_time)
+		_checkpoint_tween.tween_callback(_checkpoint_player.stop)
 
 	_restore_background_players(fade_time)
 
@@ -136,16 +140,31 @@ func _fade_background_players(target_volume_db: float, fade_time: float) -> void
 			continue
 		if not _checkpoint_faded_players.has(player):
 			_checkpoint_faded_players[player] = player.volume_db
+		_stop_background_tween(player)
 		var tween := create_tween()
+		_background_tweens[player] = tween
 		tween.tween_property(player, "volume_db", target_volume_db, fade_time)
 
 func _restore_background_players(fade_time: float) -> void:
 	for player in _checkpoint_faded_players.keys():
 		if not is_instance_valid(player):
 			continue
+		_stop_background_tween(player)
 		var tween := create_tween()
+		_background_tweens[player] = tween
 		tween.tween_property(player, "volume_db", _checkpoint_faded_players[player], fade_time)
 	_checkpoint_faded_players.clear()
+
+func _stop_background_tween(player: AudioStreamPlayer) -> void:
+	if not _background_tweens.has(player):
+		return
+	var tween := _background_tweens[player] as Tween
+	_stop_tween(tween)
+	_background_tweens.erase(player)
+
+func _stop_tween(tween: Tween) -> void:
+	if tween != null and tween.is_valid():
+		tween.kill()
 
 func _get_background_players() -> Array[AudioStreamPlayer]:
 	var players: Array[AudioStreamPlayer] = []
