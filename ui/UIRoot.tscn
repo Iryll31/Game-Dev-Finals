@@ -1,0 +1,153 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://ui/UIRoot.gd" id="1_root"]
+[ext_resource type="Script" path="res://ui/HUDView.gd" id="2_hud"]
+[ext_resource type="Script" path="res://ui/PauseMenu.gd" id="3_pause"]
+
+[node name="UIRoot" type="CanvasLayer"]
+layer = 10
+script = ExtResource("1_root")
+
+[node name="HUDView" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_hud")
+
+[node name="PauseMenu" type="Control" parent="."]
+unique_name_in_owner = true
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("3_pause")
+
+[node name="Dim" type="ColorRect" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0156863, 0.0196078, 0.027451, 0.78)
+
+[node name="Panel" type="PanelContainer" parent="PauseMenu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -126.0
+offset_right = 150.0
+offset_bottom = 126.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="PauseMenu/Panel"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="Title" type="Label" parent="PauseMenu/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "DUNGEON PAUSED"
+horizontal_alignment = 1
+
+[node name="Directive" type="Label" parent="PauseMenu/Panel/VBox"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Keep the flame alive. Claim the staff."
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="PauseMenu/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Resume"
+
+[node name="RestartButton" type="Button" parent="PauseMenu/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Restart Floor"
+
+[node name="QuitButton" type="Button" parent="PauseMenu/Panel/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Quit"
+
+[node name="LockedNotice" type="PanelContainer" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -148.0
+offset_top = 116.0
+offset_right = 148.0
+offset_bottom = 162.0
+grow_horizontal = 2
+
+[node name="LockedLabel" type="Label" parent="LockedNotice"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 14
+text = "Door sealed. Find the floor key."
+horizontal_alignment = 1
+
+[node name="TransitionOverlay" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Dim" type="ColorRect" parent="TransitionOverlay"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.00392157, 0.00588235, 0.00784314, 0.91)
+
+[node name="VBox" type="VBoxContainer" parent="TransitionOverlay"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -220.0
+offset_top = -42.0
+offset_right = 220.0
+offset_bottom = 42.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 10
+
+[node name="TransitionLabel" type="Label" parent="TransitionOverlay/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "DESCENDING TO FLOOR 2"
+horizontal_alignment = 1
+
+[node name="TransitionHint" type="Label" parent="TransitionOverlay/VBox"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 15
+text = "Loading next chamber..."
+horizontal_alignment = 1

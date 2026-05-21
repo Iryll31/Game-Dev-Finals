@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://6ag073li4w8t"]
+
+[ext_resource type="Script" uid="uid://di2itq3558bsb" path="res://levels/FloorExit.gd" id="1_floor_exit"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_exit"]
+size = Vector2(58, 102)
+
+[node name="FloorExit" type="Area2D" unique_id=42085833]
+position = Vector2(128, 128)
+collision_layer = 8
+script = ExtResource("1_floor_exit")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=794848886]
+shape = SubResource("RectangleShape2D_exit")
+
+[node name="StoneFrame" type="Polygon2D" parent="." unique_id=1507751685]
+color = Color(0.07, 0.082, 0.105, 1)
+polygon = PackedVector2Array(-36, 48, -36, -28, -28, -48, 0, -60, 28, -48, 36, -28, 36, 48)
+
+[node name="Door" type="Polygon2D" parent="." unique_id=1337849184]
+color = Color(0.018, 0.022, 0.03, 1)
+polygon = PackedVector2Array(-22, 42, -22, -24, -16, -40, 0, -48, 16, -40, 22, -24, 22, 42)
+
+[node name="RuneGlow" type="Polygon2D" parent="." unique_id=737603855]
+color = Color(0.08, 0.78, 0.82, 0.26)
+polygon = PackedVector2Array(0, -24, 18, -12, 18, 12, 0, 24, -18, 12, -18, -12)
+
+[node name="Rune" type="Polygon2D" parent="." unique_id=1033590856]
+color = Color(1, 0.78, 0.28, 1)
+polygon = PackedVector2Array(0, -12, 12, 0, 0, 12, -12, 0)
+
+[node name="LockBar" type="Line2D" parent="." unique_id=1877855014]
+points = PackedVector2Array(-14, 0, 14, 0)
+width = 4.0
+default_color = Color(1, 0.57, 0.16, 1)
+
+[node name="PreviewLabel" type="Label" parent="." unique_id=1761681282]
+offset_left = -43.0
+offset_top = 68.0
+offset_right = 45.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(1, 0.78, 0.45, 1)
+theme_override_font_sizes/font_size = 10
+text = "LOCKED EXIT"
+horizontal_alignment = 1

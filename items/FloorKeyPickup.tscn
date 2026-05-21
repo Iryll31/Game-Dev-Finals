@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://items/FloorKeyPickup.gd" id="1_floor_key"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_key"]
+size = Vector2(54, 36)
+
+[node name="FloorKeyPickup" type="Area2D"]
+position = Vector2(128, 128)
+collision_layer = 8
+collision_mask = 1
+script = ExtResource("1_floor_key")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_key")
+
+[node name="Glow" type="Polygon2D" parent="."]
+color = Color(0.08, 0.52, 0.58, 0.22)
+polygon = PackedVector2Array(-35, -22, 35, -22, 44, 0, 35, 22, -35, 22, -44, 0)
+
+[node name="Ring" type="Polygon2D" parent="."]
+color = Color(1, 0.78, 0.28, 1)
+polygon = PackedVector2Array(-25, -12, -12, -18, 2, -12, 7, 0, 2, 12, -12, 18, -25, 12, -31, 0)
+
+[node name="Hole" type="Polygon2D" parent="."]
+color = Color(0.03, 0.035, 0.045, 1)
+polygon = PackedVector2Array(-18, -6, -10, -6, -6, 0, -10, 6, -18, 6, -22, 0)
+
+[node name="Shaft" type="Line2D" parent="."]
+points = PackedVector2Array(0, 0, 42, 0)
+width = 8.0
+default_color = Color(1, 0.78, 0.28, 1)
+
+[node name="Teeth" type="Line2D" parent="."]
+points = PackedVector2Array(24, 2, 24, 16, 34, 2, 34, 16)
+width = 5.0
+default_color = Color(1, 0.78, 0.28, 1)
+
+[node name="PreviewLabel" type="Label" parent="."]
+offset_left = -36.0
+offset_top = 32.0
+offset_right = 36.0
+offset_bottom = 56.0
+theme_override_colors/font_color = Color(0.8, 0.95, 0.93, 1)
+theme_override_font_sizes/font_size = 10
+text = "FLOOR KEY"
+horizontal_alignment = 1

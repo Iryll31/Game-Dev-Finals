@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://items/StaffPiecePickup.gd" id="1_staff_piece"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_staff"]
+radius = 22.0
+
+[node name="StaffPiecePickup" type="Area2D"]
+position = Vector2(128, 128)
+collision_layer = 8
+collision_mask = 1
+script = ExtResource("1_staff_piece")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_staff")
+
+[node name="Glow" type="Polygon2D" parent="."]
+color = Color(0.08, 0.52, 0.58, 0.22)
+polygon = PackedVector2Array(0, -28, 20, -20, 28, 0, 20, 20, 0, 28, -20, 20, -28, 0, -20, -20)
+
+[node name="Fragment" type="Polygon2D" parent="."]
+color = Color(1, 0.78, 0.28, 1)
+polygon = PackedVector2Array(0, -24, 16, -8, 10, 18, -10, 18, -16, -8)
+
+[node name="Core" type="Polygon2D" parent="."]
+color = Color(0.08, 0.78, 0.82, 1)
+polygon = PackedVector2Array(0, -10, 10, 0, 0, 10, -10, 0)
+
+[node name="Slash" type="Line2D" parent="."]
+points = PackedVector2Array(-12, 16, 14, -14)
+width = 3.0
+default_color = Color(1, 0.54, 0.14, 1)
+
+[node name="PreviewLabel" type="Label" parent="."]
+offset_left = -34.0
+offset_top = 34.0
+offset_right = 34.0
+offset_bottom = 58.0
+theme_override_colors/font_color = Color(0.8, 0.95, 0.93, 1)
+theme_override_font_sizes/font_size = 10
+text = "STAFF PIECE"
+horizontal_alignment = 1
