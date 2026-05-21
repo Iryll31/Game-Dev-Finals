@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1779386784
+::res://::1779388684
 icon.svg::CompressedTexture2D::2752212952462469772::1779178611::1779178611::1::::<><><>0<>0<>42ffcc5c1117ad3429ec792b5e334b23<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
 ::res://audio/::1779178611
 ::res://audio/bgm/::1779178611
@@ -19,7 +19,7 @@ FloorExit.tscn::PackedScene::2176264824096600085::1779386174::0::1::::<><><>0<>0
 ::res://player/::1779178611
 Player.gd::GDScript::4649460649615628701::1779178611::0::1::::<>CharacterBody2D<><>0<>0<><>::
 player.tscn::PackedScene::6181955707011405287::1779178611::0::1::::<><><>0<>0<><>::
-::res://ui/::1779386174
+::res://ui/::1779386784
 HUDView.gd::GDScript::7503907078503168279::1779386174::0::1::::<>Control<><>0<>0<><>::
 UIRoot.gd::GDScript::7892908996921494818::1779386174::0::1::::<>CanvasLayer<><>0<>0<><>::
 UIRoot.tscn::PackedScene::-1::1779386174::0::1::::<><><>0<>0<><>::res://ui/UIRoot.gd<>res://ui/HUDView.gd<>res://ui/PauseMenu.gd
