@@ -58,6 +58,10 @@ func _show_floor_transition(floor_number: int) -> void:
 	tween.tween_property(transition_overlay, "modulate:a", 1.0, 0.22)
 
 func _show_locked_notice() -> void:
+	_show_notice("Door sealed. Find the floor key.")
+
+func _show_notice(message: String) -> void:
+	locked_notice.get_node("LockedLabel").text = message
 	locked_notice.modulate.a = 0.0
 	locked_notice.show()
 	if _locked_notice_tween:

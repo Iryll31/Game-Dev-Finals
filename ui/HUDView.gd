@@ -11,14 +11,17 @@ var has_key := false
 var staff_pieces: Array[bool] = [false, false, false, false]
 
 var _title_font := ThemeDB.fallback_font
-var _font_size := 18
-var _small_font_size := 13
+var _font_size := 19
+var _small_font_size := 14
 var _stone_dark := Color(0.025, 0.032, 0.041, 0.9)
 var _stone_mid := Color(0.07, 0.082, 0.105, 0.96)
-var _stone_edge := Color(0.185, 0.205, 0.32, 0.92)
+var _stone_edge := Color(0.25, 0.29, 0.42, 0.96)
 var _rune_teal := Color(0.08, 0.78, 0.82, 0.9)
 var _ember := Color(1.0, 0.57, 0.16, 0.95)
 var _gold := Color(1.0, 0.78, 0.28, 0.98)
+var _staff_fanfare_piece := -1
+var _staff_fanfare_scale := 1.0
+var _staff_fanfare_tween: Tween
 
 func _ready() -> void:
 	mouse_filter = Control.MOUSE_FILTER_IGNORE
@@ -125,13 +128,14 @@ func _draw_key_status(origin: Vector2) -> void:
 	draw_string(_title_font, origin + Vector2(45, 14), "KEY" if has_key else "LOCKED", HORIZONTAL_ALIGNMENT_LEFT, -1.0, _small_font_size, edge_color)
 
 func _draw_staff_tracker(origin: Vector2) -> void:
-	var panel := Rect2(origin, Vector2(238, 48))
+	var panel := Rect2(origin, Vector2(252, 52))
 	_draw_panel(panel)
-	draw_string(_title_font, origin + Vector2(16, 29), "STAFF", HORIZONTAL_ALIGNMENT_LEFT, -1.0, _small_font_size, Color(1.0, 0.88, 0.48))
+	draw_string(_title_font, origin + Vector2(16, 31), "STAFF", HORIZONTAL_ALIGNMENT_LEFT, -1.0, _small_font_size, Color(1.0, 0.91, 0.56))
 	for i in MAX_STAFF_PIECES:
-		var piece_origin := origin + Vector2(86 + i * 34, 15)
+		var piece_origin := origin + Vector2(92 + i * 36, 17)
 		var filled := i < staff_pieces.size() and staff_pieces[i]
-		_draw_staff_piece(piece_origin, filled)
+		var fanfare_scale := _staff_fanfare_scale if i == _staff_fanfare_piece else 1.0
+		_draw_staff_piece(piece_origin, filled, fanfare_scale)
 
 func _draw_heart(center: Vector2, color: Color) -> void:
 	var points := PackedVector2Array([
@@ -155,12 +159,17 @@ func _draw_gem(center: Vector2, color: Color) -> void:
 	draw_colored_polygon(points, color)
 	draw_polyline(points + PackedVector2Array([points[0]]), Color(0.74, 1.0, 0.96), 1.3)
 
-func _draw_staff_piece(origin: Vector2, filled: bool) -> void:
+func _draw_staff_piece(origin: Vector2, filled: bool, fanfare_scale := 1.0) -> void:
 	var fill := _gold if filled else Color(0.115, 0.108, 0.13)
 	var edge := Color(1.0, 0.93, 0.66) if filled else Color(0.36, 0.38, 0.52)
-	draw_rect(Rect2(origin, Vector2(22, 18)), fill, true)
-	draw_rect(Rect2(origin, Vector2(22, 18)), edge, false, 1.5)
-	draw_line(origin + Vector2(4, 14), origin + Vector2(18, 4), edge, 2.0)
+	var piece_size := Vector2(22, 18) * fanfare_scale
+	var offset := (Vector2(22, 18) - piece_size) * 0.5
+	var rect := Rect2(origin + offset, piece_size)
+	if fanfare_scale > 1.01:
+		draw_circle(origin + Vector2(11, 9), 20.0 * fanfare_scale, Color(1.0, 0.78, 0.28, 0.18))
+	draw_rect(rect, fill, true)
+	draw_rect(rect, edge, false, 1.5)
+	draw_line(rect.position + Vector2(4, rect.size.y - 4), rect.position + Vector2(rect.size.x - 4, 4), edge, 2.0)
 
 func _draw_torch(origin: Vector2, lit: bool) -> void:
 	draw_rect(Rect2(origin + Vector2(-2, 8), Vector2(4, 11)), Color(0.28, 0.19, 0.13), true)
@@ -200,4 +209,20 @@ func _on_key_changed(new_has_key: bool) -> void:
 func _on_staff_piece_collected(piece_index: int) -> void:
 	if piece_index >= 0 and piece_index < staff_pieces.size():
 		staff_pieces[piece_index] = true
+		_play_staff_fanfare(piece_index)
 	queue_redraw()
+
+func _play_staff_fanfare(piece_index: int) -> void:
+	_staff_fanfare_piece = piece_index
+	_staff_fanfare_scale = 1.55
+	if _staff_fanfare_tween:
+		_staff_fanfare_tween.kill()
+	_staff_fanfare_tween = create_tween()
+	_staff_fanfare_tween.set_parallel(true)
+	_staff_fanfare_tween.tween_property(self, "_staff_fanfare_scale", 1.0, 0.34).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	_staff_fanfare_tween.tween_method(func(_value): queue_redraw(), 0.0, 1.0, 0.34)
+	_staff_fanfare_tween.set_parallel(false)
+	_staff_fanfare_tween.tween_callback(func():
+		_staff_fanfare_piece = -1
+		queue_redraw()
+	)
