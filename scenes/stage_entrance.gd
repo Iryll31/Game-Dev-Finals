@@ -2,6 +2,8 @@ extends Area2D
 
 @export_file("*.tscn") var target_scene: String
 @export var prompt_text := "Press E to enter"
+@export var requires_key := false
+@export var locked_prompt_text := "You need a key first"
 @export var use_target_spawn := false
 @export var target_spawn_position := Vector2.ZERO
 
@@ -18,6 +20,9 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	if _player_nearby and not _is_entering and Input.is_action_just_pressed("interact"):
+		if requires_key and not GameManager.has_key_for_scene():
+			_show_prompt(locked_prompt_text)
+			return
 		_enter_target_scene()
 
 
@@ -27,7 +32,7 @@ func _on_body_entered(body: Node2D) -> void:
 
 	_player_nearby = true
 	_nearby_player = body as CharacterBody2D
-	_show_prompt(prompt_text)
+	_show_prompt(_get_current_prompt_text())
 
 
 func _on_body_exited(body: Node2D) -> void:
@@ -68,6 +73,9 @@ func _enter_target_scene() -> void:
 		push_warning("Stage entrance target scene is missing: " + target_scene)
 		return
 
+	if requires_key:
+		GameManager.has_key = false
+
 	_is_entering = true
 	monitoring = false
 	_hide_prompt()
@@ -83,3 +91,10 @@ func _enter_target_scene() -> void:
 
 		GameManager.set_transition_spawn(target_spawn_position, target_scene)
 	get_tree().change_scene_to_file(target_scene)
+
+
+func _get_current_prompt_text() -> String:
+	if requires_key and not GameManager.has_key_for_scene():
+		return locked_prompt_text
+
+	return prompt_text

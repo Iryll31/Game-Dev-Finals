@@ -1,6 +1,15 @@
-res://scenes/Scene 4.tscn
 res://dungeontileset.tres
 res://assets/God rays.gdshader
-res://scripts/platform_move.gd
-res://scenes/Scene 3.tscn
+res://scenes/Key.tscn
 res://scenes/stage_entrance.gd
+res://scenes/Stage 1.tscn
+res://autoload/GameManager.gd
+res://scenes/key.gd
+res://scenes/Stage 2.tscn
+res://killzone.gd
+res://scripts/killzone.gd
+res://autoload/AudioManager.gd
+res://scenes/heart_hud.gd
+res://scenes/key_progress_label.gd
+res://scenes/key_progress_icon.gd
+res://scenes/Chest.tscn

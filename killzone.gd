@@ -12,7 +12,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 	_is_triggered = true
 	monitoring = false
-	print("You died!")
+	print("You took damage!")
+	_damage_player(body)
 	Engine.time_scale=0.5
 	var collision_shape := body.get_node_or_null("CollisionShape2D")
 	if collision_shape != null:
@@ -26,3 +27,11 @@ func _on_timer_timeout() -> void:
 		get_tree().change_scene_to_file(GameManager.checkpoint_scene_path)
 	else:
 		get_tree().reload_current_scene()
+
+
+func _damage_player(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(1)
+		return
+
+	GameManager.take_damage(1)

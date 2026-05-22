@@ -33,7 +33,7 @@ var sfx_map: Dictionary = {
 	"jump":          "res://audio/sfx/unit_jump.ogg",
 	"shoot":         "res://audio/sfx/unit_shoot.ogg",
 	"enemy_hit":     "res://audio/sfx/enemy_hit.ogg",
-	"player_hit":    "res://audio/sfx/player_hit.ogg",
+	"player_hit":    "res://sounds/hurt.wav",
 	"key_collect":   "res://audio/sfx/key_collect.ogg",
 	"gem_collect":   "res://audio/sfx/gem_collect.ogg",
 	"heart_collect": "res://audio/sfx/heart_collect.ogg",

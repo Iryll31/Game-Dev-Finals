@@ -12,7 +12,11 @@
 [ext_resource type="Script" uid="uid://dldaq36xpl5r4" path="res://scenes/checkpoint.gd" id="7_nrte0"]
 [ext_resource type="Script" uid="uid://cjkfdkxsx5vbm" path="res://scenes/stage_entrance.gd" id="8_xqcpu"]
 [ext_resource type="PackedScene" uid="uid://be3i1b013a5i7" path="res://scenes/spiike trap.tscn" id="9_xqcpu"]
+[ext_resource type="PackedScene" uid="uid://cjpkiuse3h107" path="res://scenes/Key.tscn" id="10_key"]
+[ext_resource type="Script" uid="uid://2hvqa77f5wd6" path="res://scenes/key_progress_label.gd" id="11_key_hud"]
 [ext_resource type="AudioStream" uid="uid://ggis86b6kdn8" path="res://audio/sfx/dungeon sound.mp3" id="12_6str2"]
+[ext_resource type="Script" path="res://scenes/heart_hud.gd" id="13_heart_hud"]
+[ext_resource type="Script" path="res://scenes/key_progress_icon.gd" id="14_key_icon"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6str2"]
 texture = ExtResource("1_feu17")
@@ -1263,6 +1267,28 @@ limit_right = 1702
 limit_bottom = 837
 position_smoothing_enabled = true
 
+[node name="KeyHUD" type="CanvasLayer" parent="." unique_id=2129441654]
+
+[node name="KeyProgressIcon" type="AnimatedSprite2D" parent="KeyHUD"]
+position = Vector2(24, 22)
+script = ExtResource("14_key_icon")
+
+[node name="KeyProgressLabel" type="Label" parent="KeyHUD" unique_id=298975779]
+offset_left = 44.0
+offset_top = 10.0
+offset_right = 114.0
+offset_bottom = 34.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "0/1"
+script = ExtResource("11_key_hud")
+
+[node name="HeartHUD" type="Node2D" parent="KeyHUD"]
+position = Vector2(92, 24)
+script = ExtResource("13_heart_hud")
+
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=259591843]
 color = Color(0.8541102, 0.6981251, 0.6936573, 1)
 energy = 0.67
@@ -1316,12 +1342,16 @@ script = ExtResource("7_nrte0")
 position = Vector2(986, 637)
 script = ExtResource("7_nrte0")
 
+[node name="Key" parent="." unique_id=994881395 instance=ExtResource("10_key")]
+position = Vector2(287, 475)
+
 [node name="Stage3Entrance" type="Area2D" parent="." unique_id=1524122798]
 position = Vector2(1031, 692)
 collision_mask = 2
 script = ExtResource("8_xqcpu")
 target_scene = "res://scenes/Scene 3.tscn"
 prompt_text = "Press E to Enter"
+requires_key = true
 use_target_spawn = true
 target_spawn_position = Vector2(50, 148)
 

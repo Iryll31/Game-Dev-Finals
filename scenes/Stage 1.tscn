@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dypi3rv7edewb" path="res://assets/Tilesetv3.png" id="2_ac0o8"]
 [ext_resource type="PackedScene" uid="uid://17vo4edfrmaj" path="res://scenes/player.tscn" id="3_vqe5t"]
 [ext_resource type="Texture2D" uid="uid://b54st7qshq7jv" path="res://assets/Background_0.png" id="5_2v3h1"]
-[ext_resource type="PackedScene" uid="uid://dks8062ff3beh" path="res://scenes/enemy.tscn" id="5_028ra"]
+[ext_resource type="PackedScene" uid="uid://dks8062ff3beh" path="res://enemy.tscn" id="5_028ra"]
 [ext_resource type="Texture2D" uid="uid://b1i1j85ts3i7j" path="res://assets/Background_1.png" id="5_ac0o8"]
 [ext_resource type="AudioStream" uid="uid://clkryu52so3n1" path="res://assets/deuslower-atmosphere-dark-fantasy-dungeon-synth-248210.mp3" id="7_vqe5t"]
 [ext_resource type="AudioStream" uid="uid://3hxo8u85jgxm" path="res://audio/sfx/outside sound.mp3" id="8_kmqi8"]
@@ -14,6 +14,10 @@
 [ext_resource type="Script" uid="uid://osxrd5de0rf4" path="res://scenes/incubus_boy_dialogue.gd" id="11_dialogue"]
 [ext_resource type="Script" uid="uid://cjkfdkxsx5vbm" path="res://scenes/stage_entrance.gd" id="12_stage_entrance"]
 [ext_resource type="PackedScene" uid="uid://be3i1b013a5i7" path="res://scenes/spiike trap.tscn" id="13_d52mq"]
+[ext_resource type="PackedScene" uid="uid://cjpkiuse3h107" path="res://scenes/Key.tscn" id="14_key"]
+[ext_resource type="Script" uid="uid://2hvqa77f5wd6" path="res://scenes/key_progress_label.gd" id="15_key_hud"]
+[ext_resource type="Script" uid="uid://8i7p6qherh48" path="res://scenes/heart_hud.gd" id="16_heart_hud"]
+[ext_resource type="Script" path="res://scenes/key_progress_icon.gd" id="17_key_icon"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d52mq"]
 texture = ExtResource("8_rxh2b")
@@ -1224,10 +1228,10 @@ distance = -61.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_du160"]
 size = Vector2(26, 33)
 
-[node name="Node2D" type="Node2D" unique_id=508283502]
+[node name="Node2D2" type="Node2D" unique_id=508283502]
 
 [node name="Player" parent="." unique_id=1103805679 instance=ExtResource("3_vqe5t")]
-position = Vector2(36, -5)
+position = Vector2(33, -39)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=299597785]
 position = Vector2(0, -23)
@@ -1237,6 +1241,28 @@ limit_top = -291
 limit_right = 2602
 limit_bottom = 248
 position_smoothing_enabled = true
+
+[node name="KeyHUD" type="CanvasLayer" parent="." unique_id=1073612671]
+
+[node name="KeyProgressIcon" type="AnimatedSprite2D" parent="KeyHUD"]
+position = Vector2(24, 22)
+script = ExtResource("17_key_icon")
+
+[node name="KeyProgressLabel" type="Label" parent="KeyHUD" unique_id=2112520844]
+offset_left = 44.0
+offset_top = 10.0
+offset_right = 114.0
+offset_bottom = 34.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "0/1"
+script = ExtResource("15_key_hud")
+
+[node name="HeartHUD" type="Node2D" parent="KeyHUD" unique_id=1627235999]
+position = Vector2(92, 24)
+script = ExtResource("16_heart_hud")
 
 [node name="Enemy" parent="." unique_id=193293020 instance=ExtResource("5_028ra")]
 z_index = 1
@@ -1328,7 +1354,10 @@ script = ExtResource("11_dialogue")
 shape = SubResource("RectangleShape2D_incubus_dialogue")
 
 [node name="Checkpoint2" parent="." unique_id=1340323433 instance=ExtResource("9_028ra")]
-position = Vector2(1671, 164)
+position = Vector2(1923, 161)
+
+[node name="Key" parent="." unique_id=1889487418 instance=ExtResource("14_key")]
+position = Vector2(1589, 153)
 
 [node name="killzone" parent="." unique_id=1808961880 instance=ExtResource("10_gmwhc")]
 position = Vector2(1156, 765)
@@ -1343,6 +1372,7 @@ collision_mask = 2
 script = ExtResource("12_stage_entrance")
 target_scene = "res://scenes/Stage 2.tscn"
 prompt_text = "Press E to Enter Dungeon"
+requires_key = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage2Entrance" unique_id=34167530]
 shape = SubResource("RectangleShape2D_du160")

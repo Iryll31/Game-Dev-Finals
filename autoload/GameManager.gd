@@ -8,6 +8,7 @@ signal lives_changed(new_lives: int)
 signal gems_changed(new_gems: int)
 signal staff_piece_collected(piece_index: int)
 signal health_changed(new_hp: int, max_hp: int)
+signal key_progress_changed(collected: int, total: int)
 signal game_over
 signal game_won
 
@@ -28,6 +29,7 @@ var checkpoint_scene_path : String = ""
 var transition_spawn_pos : Vector2 = Vector2.ZERO
 var transition_spawn_scene_path : String = ""
 var has_key        : bool = false
+var collected_keys_by_scene: Dictionary = {}
 
 # --- Floor scene paths (set these to your actual scene file paths) ---
 const FLOOR_SCENES: Array[String] = [
@@ -54,6 +56,9 @@ func reset_run() -> void:
 	transition_spawn_pos = Vector2.ZERO
 	transition_spawn_scene_path = ""
 	has_key         = false
+	collected_keys_by_scene.clear()
+	emit_signal("health_changed", health, MAX_HEALTH)
+	emit_key_progress_changed()
 
 # --- Lives ---
 func add_life(amount: int = 1) -> void:
@@ -135,6 +140,36 @@ func consume_transition_spawn(scene_path: String) -> Vector2:
 	transition_spawn_pos = Vector2.ZERO
 	transition_spawn_scene_path = ""
 	return spawn_pos
+
+# --- Keys ---
+func collect_key(scene_path: String = "") -> void:
+	var key_scene_path := _resolve_scene_path(scene_path)
+	if key_scene_path == "":
+		return
+
+	collected_keys_by_scene[key_scene_path] = true
+	has_key = true
+	emit_key_progress_changed(key_scene_path)
+
+func has_key_for_scene(scene_path: String = "") -> bool:
+	var key_scene_path := _resolve_scene_path(scene_path)
+	if key_scene_path == "":
+		return false
+
+	return collected_keys_by_scene.get(key_scene_path, false)
+
+func get_key_progress(scene_path: String = "") -> int:
+	return 1 if has_key_for_scene(scene_path) else 0
+
+func emit_key_progress_changed(scene_path: String = "") -> void:
+	emit_signal("key_progress_changed", get_key_progress(scene_path), 1)
+
+func _resolve_scene_path(scene_path: String = "") -> String:
+	if scene_path != "":
+		return scene_path
+	if get_tree().current_scene != null:
+		return get_tree().current_scene.scene_file_path
+	return ""
 
 # --- Floor Transition ---
 func next_floor() -> void:

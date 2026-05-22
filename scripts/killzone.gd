@@ -12,8 +12,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 	_is_triggered = true
 	monitoring = false
-	print("You died!")
-	_play_player_death_feedback(body)
+	print("You took damage!")
+	_damage_player(body)
 	Engine.time_scale=0.5
 	var collision_shape := body.get_node_or_null("CollisionShape2D")
 	if collision_shape != null:
@@ -29,9 +29,9 @@ func _on_timer_timeout() -> void:
 		get_tree().reload_current_scene()
 
 
-func _play_player_death_feedback(body: Node2D) -> void:
-	if body.has_method("play_death_feedback"):
-		body.play_death_feedback()
+func _damage_player(body: Node2D) -> void:
+	if body.has_method("take_damage"):
+		body.take_damage(1)
 		return
 
-	AudioManager.play_sfx("player_death")
+	GameManager.take_damage(1)
