@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://bv2gtfausuycy"]
+
+[ext_resource type="PackedScene" path="res://items/StaffPiecePickup.tscn" id="1_staff_piece"]
+
+[node name="StaffBasePickup" unique_id=741112103 instance=ExtResource("1_staff_piece")]
+piece_index = 3
