@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://cuct533q6aev4"]
 
+[ext_resource type="Script" uid="uid://b7ih644uurjdl" path="res://player/Player.gd" id="1_rkbax"]
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_kqu6x"]
 animations = [{
 "frames": [],
@@ -26,6 +28,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kqu6x"]
 
 [node name="Player" type="CharacterBody2D" unique_id=246734096 groups=["player"]]
+script = ExtResource("1_rkbax")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1742712646]
 sprite_frames = SubResource("SpriteFrames_kqu6x")

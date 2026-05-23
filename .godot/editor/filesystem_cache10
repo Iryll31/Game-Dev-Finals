@@ -1,16 +1,36 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1779160789
+::res://::1779507072
 icon.svg::CompressedTexture2D::2752212952462469772::1779112422::1779112430::1::::<><><>0<>0<>42ffcc5c1117ad3429ec792b5e334b23<>res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex::
-::res://audio/::1779112518
-::res://audio/bgm/::1779112511
-::res://audio/sfx/::1779112518
+main_scene.tscn::PackedScene::6623387595650840058::1779472382::0::1::::<><><>0<>0<><>::uid://c4ne6o1mc4p2i::::res://enemies/hollow.tscn<>uid://botg20nkep0uc::::res://enemies/hollowranged.tscn<>uid://bqbcwqexfnof8::::res://levels/tile.tscn<>uid://y1y56akkmxad::::res://levels/platformPack_tilesheet2.png
+::res://audio/::1779160927
+::res://audio/bgm/::1779160927
+::res://audio/sfx/::1779160940
 ::res://autoload/::1779118057
 AudioManager.gd::GDScript::6226478574366380530::1779111147::0::1::::<>Node<><>0<>0<><>::
 GameManager.gd::GDScript::3959371912416214330::1779111147::0::1::::<>Node<><>0<>0<><>::
-::res://enemies/::1779112477
-::res://items/::1779112482
-::res://levels/::1779112489
-::res://player/::1779159588
-Player.gd::GDScript::4649460649615628701::1779119215::0::1::::<>CharacterBody2D<><>0<>0<><>::
-player.tscn::PackedScene::6181955707011405287::1779159588::0::1::::<><><>0<>0<><>::
-::res://ui/::1779112504
+::res://enemies/::1779472385
+Golem_1_attack.png::CompressedTexture2D::6372121359340927812::1779435012::1779435012::1::::<><><>0<>0<>d2c36f36cf1d272769f45cc43e4df96c<>res://.godot/imported/Golem_1_attack.png-4461d643aa1bb420e34c7fd90b17a497.ctex::
+Golem_1_die.png::CompressedTexture2D::686279361949477423::1779435012::1779435012::1::::<><><>0<>0<>9b3e80fde13a109519f51b20f9578f20<>res://.godot/imported/Golem_1_die.png-ec1856e8804df93cb4648d2b67047b57.ctex::
+Golem_1_hurt.png::CompressedTexture2D::7344914660113174328::1779435012::1779435012::1::::<><><>0<>0<>8d09109ea0eada9a622a0478a0fb4c3c<>res://.godot/imported/Golem_1_hurt.png-372b1d24159424f71b3b8daba09fa775.ctex::
+Golem_1_idle.png::CompressedTexture2D::1718129993346774137::1779435012::1779435012::1::::<><><>0<>0<>690224bf1abfea7a12b076e81fb64ff6<>res://.godot/imported/Golem_1_idle.png-0d9e2a5fbd56aeda7b4fae6063fe986e.ctex::
+Golem_1_walk.png::CompressedTexture2D::7017135948909345262::1779435012::1779435012::1::::<><><>0<>0<>505f251e286fe8874a349e2b210b6aa7<>res://.godot/imported/Golem_1_walk.png-70070fa9eae00275227bcc2af6c4961b.ctex::
+Hollow.gd::GDScript::159101461552055500::1779468501::0::1::::<>CharacterBody2D<><>0<>0<><>::
+hollow.tscn::PackedScene::6835453747314908642::1779472379::0::1::::<><><>0<>0<><>::uid://cjcm31dqqwie::::res://enemies/Hollow.gd<>uid://cw1x54os4rg5y::::res://enemies/Golem_1_attack.png<>uid://c68fg6wuk7us1::::res://enemies/Golem_1_walk.png<>uid://j1o6kqdd4tkx::::res://enemies/Golem_1_die.png<>uid://dcv6w3cuvr1lc::::res://enemies/Golem_1_hurt.png<>uid://yqjl5tfqvofp::::res://enemies/Golem_1_idle.png
+hollowranged.gd::GDScript::4033396817916340884::1779472346::0::1::::<>CharacterBody2D<><>0<>0<><>::
+hollowranged.tscn::PackedScene::3408701523971250886::1779472381::0::1::::<><><>0<>0<><>::uid://bxp2prqubl1ca::::res://enemies/hollowranged.gd<>uid://cg0hgva0fvwbf::::res://enemies/wizard fly forward.png<>uid://ceyl0e0c1opxk::::res://enemies/wizard death.png
+hollow_projectile.gd::GDScript::6997654828050692252::1779351221::0::1::::<>Area2D<><>0<>0<><>::
+hollow_projectile.tscn::PackedScene::5606078982446895191::1779472385::0::1::::<><><>0<>0<><>::uid://c6xyl8wp8wnjw::::res://enemies/hollow_projectile.gd<>uid://dq6r5o8kxnfse::::res://enemies/Zomb Skull1.png
+Projectile.gd::GDScript::4594592583389867384::1779197177::0::1::::<>Area2D<><>0<>0<><>::
+wizard attack.png::CompressedTexture2D::1061630210565465264::1779434977::1779434979::1::::<><><>0<>0<>5e7e2710cbda6af3b6e416407c5e0b0e<>res://.godot/imported/wizard attack.png-ca0d8372ae33c1b37d11b1fea449397e.ctex::
+wizard death.png::CompressedTexture2D::5103854588643514724::1779434977::1779434977::1::::<><><>0<>0<>d82c2783a2c25fd846dd6aa824897430<>res://.godot/imported/wizard death.png-ed1956a4bdf7edb0ccd4f43c545deaa4.ctex::
+wizard fly forward.png::CompressedTexture2D::5246020710912456599::1779465218::1779465218::1::::<><><>0<>0<>f5b317c668cbd55ff125049a14c2d889<>res://.godot/imported/wizard fly forward.png-7f35dd824607982180522fb91d08c28c.ctex::
+wizard idle.png::CompressedTexture2D::4779105705192830372::1779434977::1779434977::1::::<><><>0<>0<>fbb241fc3e599b3c6a96dbb30e32445c<>res://.godot/imported/wizard idle.png-1f448fe4475ea503f56a83dfdacc40a3.ctex::
+Zomb Skull1.png::CompressedTexture2D::8347365809148906196::1779471711::1779471732::1::::<><><>0<>0<>a3350c0ac2961d4682a3653b665a497d<>res://.godot/imported/Zomb Skull1.png-404e40d9c59460caf74deed944c8b998.ctex::
+::res://items/::1779160927
+::res://levels/::1779472383
+platformPack_tilesheet2.png::CompressedTexture2D::1739718479253943711::1772856118::1779285747::1::::<><><>0<>0<>9254daa9c7b59986826f18e8cb880b83<>res://.godot/imported/platformPack_tilesheet2.png-63b489fc5c45e4fd5e55b101b01144fc.ctex::
+tile.tscn::PackedScene::3511668128712163355::1779472383::0::1::::<><><>0<>0<><>::uid://y1y56akkmxad::::res://levels/platformPack_tilesheet2.png
+::res://player/::1779472380
+Player.gd::GDScript::4649460649615628701::1779418328::0::1::::<>CharacterBody2D<><>0<>0<><>::
+player.tscn::PackedScene::6181955707011405287::1779472380::0::1::::<><><>0<>0<><>::uid://b7ih644uurjdl::::res://player/Player.gd
+::res://ui/::1779160927

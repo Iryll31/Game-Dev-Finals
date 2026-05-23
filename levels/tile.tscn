@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://bqbcwqexfnof8"]
+
+[ext_resource type="Texture2D" uid="uid://y1y56akkmxad" path="res://levels/platformPack_tilesheet2.png" id="1_pf2y0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xte1h"]
+
+[node name="tile" type="StaticBody2D" unique_id=2076129885]
+
+[node name="tile" type="Sprite2D" parent="." unique_id=832251223]
+position = Vector2(0, 5.9604645e-08)
+scale = Vector2(3, 3)
+texture = ExtResource("1_pf2y0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1092555627]
+scale = Vector2(9.5, 9.5)
+shape = SubResource("RectangleShape2D_xte1h")

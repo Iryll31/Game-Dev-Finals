@@ -1,4 +1,3 @@
-
 extends CharacterBody2D
 
 # ── Movement Constants ───────────────────────────────────────────────────

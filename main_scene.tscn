@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://c1mohxjfcwfqw"]
+
+[ext_resource type="PackedScene" uid="uid://c4ne6o1mc4p2i" path="res://enemies/hollow.tscn" id="1_0f027"]
+[ext_resource type="PackedScene" uid="uid://botg20nkep0uc" path="res://enemies/hollowranged.tscn" id="2_2c62f"]
+[ext_resource type="PackedScene" uid="uid://bqbcwqexfnof8" path="res://levels/tile.tscn" id="3_gyfs4"]
+[ext_resource type="Texture2D" uid="uid://y1y56akkmxad" path="res://levels/platformPack_tilesheet2.png" id="4_8mm7a"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hq1ik"]
+texture = ExtResource("4_8mm7a")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSet" id="TileSet_nfk4m"]
+physics_layer_0/collision_layer = 3
+sources/0 = SubResource("TileSetAtlasSource_hq1ik")
+
+[node name="MainScene" type="Node2D" unique_id=503221911]
+
+[node name="HollowRanged" parent="." unique_id=164032149 instance=ExtResource("2_2c62f")]
+position = Vector2(287, 95)
+
+[node name="Hollow" parent="." unique_id=243588909 instance=ExtResource("1_0f027")]
+position = Vector2(59, 117)
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=986947700]
+tile_set = SubResource("TileSet_nfk4m")
+collision_visibility_mode = 1
+
+[node name="tile" parent="." unique_id=2076129885 instance=ExtResource("3_gyfs4")]
+position = Vector2(119, 258)
+
+[node name="tile3" parent="." unique_id=1262412525 instance=ExtResource("3_gyfs4")]
+position = Vector2(-78, 152)
+
+[node name="tile2" parent="." unique_id=2141916880 instance=ExtResource("3_gyfs4")]
+position = Vector2(310, 258)

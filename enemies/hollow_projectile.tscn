@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cl4vki4i3k512"]
+
+[ext_resource type="Script" uid="uid://c6xyl8wp8wnjw" path="res://enemies/hollow_projectile.gd" id="1_4icwy"]
+[ext_resource type="Texture2D" uid="uid://dq6r5o8kxnfse" path="res://enemies/Zomb Skull1.png" id="2_4icwy"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8mcoc"]
+
+[node name="HollowProjectile" type="Area2D" unique_id=1466903035]
+collision_layer = 3
+script = ExtResource("1_4icwy")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=694192306]
+scale = Vector2(1.5, 1.451)
+texture = ExtResource("2_4icwy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2134977993]
+scale = Vector2(2, 2)
+shape = SubResource("CircleShape2D_8mcoc")
+
+[node name="LifetimeTimer" type="Timer" parent="." unique_id=899065789]
+wait_time = 2.0
+one_shot = true
+
+[node name="RayCast2D" type="RayCast2D" parent="." unique_id=1304418053]
+target_position = Vector2(10, 0)
