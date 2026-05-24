@@ -1,0 +1,5 @@
+.godot/
+*.translation
+*.tmp
+*.restore
+export_presets.cfg

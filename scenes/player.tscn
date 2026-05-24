@@ -1,0 +1,124 @@
+[gd_scene format=3 uid="uid://17vo4edfrmaj"]
+
+[ext_resource type="Texture2D" uid="uid://dogplti5o8m4j" path="res://sprites/ryougi/ryo0000.png" id="1_1jxqw"]
+[ext_resource type="Script" uid="uid://brw4gpjwfu7ml" path="res://scripts/player.gd" id="1_dw050"]
+[ext_resource type="Texture2D" uid="uid://dnem6gbri6s1p" path="res://sprites/ryougi/ryo0001.png" id="2_dw050"]
+[ext_resource type="Texture2D" uid="uid://b5x1xi07mik8k" path="res://sprites/ryougi/ryo0002.png" id="3_b26j0"]
+[ext_resource type="Texture2D" uid="uid://c4k3w3tlwgfen" path="res://sprites/ryougi/ryo0003.png" id="4_n7ghd"]
+[ext_resource type="Texture2D" uid="uid://ca8rhpob8qxqm" path="res://sprites/ryougi/ryo0004.png" id="5_nvl01"]
+[ext_resource type="Texture2D" uid="uid://i5fthlytwdmx" path="res://sprites/ryougi/ryo0005.png" id="6_ivps1"]
+[ext_resource type="Texture2D" uid="uid://fyyr86qdwl61" path="res://sprites/ryougi/ryo0006.png" id="7_urp6f"]
+[ext_resource type="Texture2D" uid="uid://dtap0xdsagrhw" path="res://sprites/ryougi/jump/ryo1508.png" id="9_5tmop"]
+[ext_resource type="Texture2D" uid="uid://ip71qnc7besh" path="res://sprites/ryougi/run/ryo2602.png" id="9_q13i1"]
+[ext_resource type="Texture2D" uid="uid://drcam262qwbmg" path="res://sprites/ryougi/jump/ryo1509.png" id="10_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://bcacf7g0kafq3" path="res://sprites/ryougi/run/ryo2603.png" id="10_pylmc"]
+[ext_resource type="Texture2D" uid="uid://dn11lhomlux7k" path="res://sprites/ryougi/jump/ryo1510.png" id="11_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://baeapnp5lulsl" path="res://sprites/ryougi/run/ryo2604.png" id="11_pbfsw"]
+[ext_resource type="Texture2D" uid="uid://x4ft8v0xloq0" path="res://sprites/ryougi/run/ryo2605.png" id="12_5tmop"]
+[ext_resource type="Texture2D" uid="uid://cp5fk2qdislel" path="res://sprites/ryougi/run/ryo2606.png" id="13_7ahtn"]
+[ext_resource type="Texture2D" uid="uid://djk72al4fibqo" path="res://sprites/ryougi/run/ryo2607.png" id="14_7lmhl"]
+[ext_resource type="Texture2D" uid="uid://y5x7s24q44rn" path="res://sprites/ryougi/run/ryo2608.png" id="15_dx0e4"]
+[ext_resource type="Texture2D" uid="uid://bwm858esupiqk" path="res://sprites/ryougi/run/ryo2609.png" id="16_jm5j8"]
+[ext_resource type="Texture2D" uid="uid://b1lfrg5ksmtfg" path="res://sprites/ryougi/run/ryo2610.png" id="17_7hik5"]
+[ext_resource type="Texture2D" uid="uid://cy4j1ofuqj5sk" path="res://sprites/ryougi/run/ryo2611.png" id="18_qtqh7"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bwjto"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_1jxqw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_dw050")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b26j0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_n7ghd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_nvl01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ivps1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_urp6f")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7ahtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_7lmhl")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_q13i1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pylmc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_pbfsw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_5tmop")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_7ahtn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7lmhl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_dx0e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_jm5j8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_7hik5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_qtqh7")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 9.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_606se"]
+radius = 9.0
+height = 46.0
+
+[node name="Player" type="CharacterBody2D" unique_id=1103805679]
+z_index = 5
+collision_layer = 2
+script = ExtResource("1_dw050")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1789446730]
+position = Vector2(-2, -41)
+scale = Vector2(0.4453125, 0.4453125)
+sprite_frames = SubResource("SpriteFrames_bwjto")
+animation = &"jump"
+autoplay = "idle"
+frame_progress = 0.5623154
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=847104656]
+position = Vector2(0, -24)
+shape = SubResource("CapsuleShape2D_606se")
+
+[node name="AudioListener2D" type="AudioListener2D" parent="." unique_id=1287452840]
