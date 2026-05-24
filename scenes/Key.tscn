@@ -96,13 +96,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_key"]
-radius = 13.0
+radius = 9.0
 
 [node name="Key" type="Area2D" unique_id=154710595]
 collision_mask = 2
 script = ExtResource("2_key_script")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1017463612]
+scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_e0gw0")
 autoplay = "default"
 frame_progress = 0.9758728

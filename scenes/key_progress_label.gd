@@ -2,8 +2,9 @@ extends Label
 
 
 func _ready() -> void:
+	z_index = 2
 	GameManager.key_progress_changed.connect(_on_key_progress_changed)
-	_update_text()
+	call_deferred("_update_text")
 
 
 func _exit_tree() -> void:

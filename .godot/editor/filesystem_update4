@@ -1,15 +1,25 @@
-res://dungeontileset.tres
-res://assets/God rays.gdshader
-res://scenes/Key.tscn
+res://autoload/GameManager.gd
 res://scenes/stage_entrance.gd
 res://scenes/Stage 1.tscn
-res://autoload/GameManager.gd
-res://scenes/key.gd
-res://scenes/Stage 2.tscn
-res://killzone.gd
-res://scripts/killzone.gd
+res://dungeontileset.tres
+res://assets/God rays.gdshader
 res://autoload/AudioManager.gd
-res://scenes/heart_hud.gd
-res://scenes/key_progress_label.gd
+res://scenes/key.gd
+res://sprites/stone_npc.tscn
+res://scenes/incubus_boy_dialogue.gd
+res://scenes/stone_npc_dialogue.gd
+res://sprites/smoke_chest.tscn
+res://scenes/staff_piece.gd
+res://scenes/chest.gd
+res://scenes/StaffPiece.tscn
+res://scenes/Stage 2.tscn
+res://scenes/Scene 3.tscn
 res://scenes/key_progress_icon.gd
-res://scenes/Chest.tscn
+res://scenes/key_progress_label.gd
+res://scenes/staff_progress_icon.gd
+res://scenes/staff_progress_label.gd
+res://scenes/Scene 4.tscn
+res://killzone.gd
+res://scenes/key_obtained_popup.gd
+res://scripts/player.gd
+res://scenes/staff_obtained_popup.gd

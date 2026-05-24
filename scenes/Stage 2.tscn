@@ -15,8 +15,11 @@
 [ext_resource type="PackedScene" uid="uid://cjpkiuse3h107" path="res://scenes/Key.tscn" id="10_key"]
 [ext_resource type="Script" uid="uid://2hvqa77f5wd6" path="res://scenes/key_progress_label.gd" id="11_key_hud"]
 [ext_resource type="AudioStream" uid="uid://ggis86b6kdn8" path="res://audio/sfx/dungeon sound.mp3" id="12_6str2"]
-[ext_resource type="Script" path="res://scenes/heart_hud.gd" id="13_heart_hud"]
-[ext_resource type="Script" path="res://scenes/key_progress_icon.gd" id="14_key_icon"]
+[ext_resource type="Script" uid="uid://8i7p6qherh48" path="res://scenes/heart_hud.gd" id="13_heart_hud"]
+[ext_resource type="Script" uid="uid://dl27ueqba1fsf" path="res://scenes/key_progress_icon.gd" id="14_key_icon"]
+[ext_resource type="PackedScene" uid="uid://b3hbd26ybl0k2" path="res://scenes/Chest.tscn" id="15_chest"]
+[ext_resource type="Script" uid="uid://h0ly6pwsscpd" path="res://scenes/staff_progress_icon.gd" id="16_staff_icon"]
+[ext_resource type="Script" uid="uid://cg4gyderc5xjn" path="res://scenes/staff_progress_label.gd" id="17_staff_hud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6str2"]
 texture = ExtResource("1_feu17")
@@ -1269,11 +1272,13 @@ position_smoothing_enabled = true
 
 [node name="KeyHUD" type="CanvasLayer" parent="." unique_id=2129441654]
 
-[node name="KeyProgressIcon" type="AnimatedSprite2D" parent="KeyHUD"]
+[node name="KeyProgressIcon" type="AnimatedSprite2D" parent="KeyHUD" unique_id=1491038961]
+z_index = 2
 position = Vector2(24, 22)
 script = ExtResource("14_key_icon")
 
 [node name="KeyProgressLabel" type="Label" parent="KeyHUD" unique_id=298975779]
+z_index = 2
 offset_left = 44.0
 offset_top = 10.0
 offset_right = 114.0
@@ -1285,9 +1290,27 @@ theme_override_font_sizes/font_size = 18
 text = "0/1"
 script = ExtResource("11_key_hud")
 
-[node name="HeartHUD" type="Node2D" parent="KeyHUD"]
+[node name="HeartHUD" type="Node2D" parent="KeyHUD" unique_id=40698224]
 position = Vector2(92, 24)
 script = ExtResource("13_heart_hud")
+
+[node name="StaffProgressIcon" type="Sprite2D" parent="KeyHUD" unique_id=113659607]
+z_index = 1
+position = Vector2(24, 50)
+script = ExtResource("16_staff_icon")
+
+[node name="StaffProgressLabel" type="Label" parent="KeyHUD" unique_id=1258714345]
+z_index = 1
+offset_left = 44.0
+offset_top = 42.0
+offset_right = 114.0
+offset_bottom = 66.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "0/4"
+script = ExtResource("17_staff_hud")
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="." unique_id=259591843]
 color = Color(0.8541102, 0.6981251, 0.6936573, 1)
@@ -1343,7 +1366,11 @@ position = Vector2(986, 637)
 script = ExtResource("7_nrte0")
 
 [node name="Key" parent="." unique_id=994881395 instance=ExtResource("10_key")]
-position = Vector2(287, 475)
+position = Vector2(288, 481)
+
+[node name="Chest" parent="." unique_id=1967414622 instance=ExtResource("15_chest")]
+position = Vector2(1139, 208)
+staff_piece_number = 2
 
 [node name="Stage3Entrance" type="Area2D" parent="." unique_id=1524122798]
 position = Vector2(1031, 692)
@@ -1352,6 +1379,7 @@ script = ExtResource("8_xqcpu")
 target_scene = "res://scenes/Scene 3.tscn"
 prompt_text = "Press E to Enter"
 requires_key = true
+requires_staff_piece = true
 use_target_spawn = true
 target_spawn_position = Vector2(50, 148)
 

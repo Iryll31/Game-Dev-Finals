@@ -14,4 +14,6 @@ func _on_body_entered(body: Node2D) -> void:
 		return
 
 	GameManager.collect_key()
+	AudioManager.play_sfx("key_collect")
+	KeyObtainedPopup.show_popup()
 	queue_free()

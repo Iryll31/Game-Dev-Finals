@@ -4,6 +4,8 @@ extends Area2D
 @export var prompt_text := "Press E to enter"
 @export var requires_key := false
 @export var locked_prompt_text := "You need a key first"
+@export var requires_staff_piece := false
+@export var locked_staff_prompt_text := "You need the staff piece first"
 @export var use_target_spawn := false
 @export var target_spawn_position := Vector2.ZERO
 
@@ -22,6 +24,9 @@ func _process(_delta: float) -> void:
 	if _player_nearby and not _is_entering and Input.is_action_just_pressed("interact"):
 		if requires_key and not GameManager.has_key_for_scene():
 			_show_prompt(locked_prompt_text)
+			return
+		if requires_staff_piece and not GameManager.has_staff_piece_for_scene():
+			_show_prompt(locked_staff_prompt_text)
 			return
 		_enter_target_scene()
 
@@ -90,11 +95,14 @@ func _enter_target_scene() -> void:
 			return
 
 		GameManager.set_transition_spawn(target_spawn_position, target_scene)
+		GameManager.set_stage_entry_spawn(target_spawn_position, target_scene)
 	get_tree().change_scene_to_file(target_scene)
 
 
 func _get_current_prompt_text() -> String:
 	if requires_key and not GameManager.has_key_for_scene():
 		return locked_prompt_text
+	if requires_staff_piece and not GameManager.has_staff_piece_for_scene():
+		return locked_staff_prompt_text
 
 	return prompt_text

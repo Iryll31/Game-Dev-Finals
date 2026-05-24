@@ -1,6 +1,7 @@
-[gd_scene format=3 uid="uid://b3hbd26ybl0k2"]
+[gd_scene load_steps=19 format=3 uid="uid://b3hbd26ybl0k2"]
 
 [ext_resource type="Texture2D" uid="uid://c6aoqkctrl0xy" path="res://items/Chests.png" id="1_cjixx"]
+[ext_resource type="Script" path="res://scenes/chest.gd" id="2_chest_script"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s2tek"]
 atlas = ExtResource("1_cjixx")
@@ -115,14 +116,27 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_axhin")
 }],
-"loop": true,
+"loop": false,
 "name": &"open",
 "speed": 5.0
 }]
 
-[node name="Chest" type="Node2D" unique_id=1564306520]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_chest"]
+size = Vector2(52, 36)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=822158303]
+[node name="Chest" type="Area2D"]
+collision_mask = 2
+script = ExtResource("2_chest_script")
+staff_piece_number = 1
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_y5v2q")
 animation = &"idle"
-frame_progress = 0.9487383
+autoplay = "idle"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_chest")
+
+[node name="LootPoint" type="Marker2D" parent="."]
+position = Vector2(0, -18)

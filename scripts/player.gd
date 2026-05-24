@@ -15,14 +15,29 @@ func _ready() -> void:
 
 
 func _apply_checkpoint_spawn() -> void:
-	var transition_spawn := GameManager.consume_transition_spawn(_get_scene_path())
+	var scene_path := _get_scene_path()
+
+	var death_spawn := GameManager.consume_death_respawn(scene_path)
+	if death_spawn != Vector2.ZERO:
+		global_position = death_spawn
+		_snap_camera_to_player()
+		call_deferred("_snap_camera_to_player")
+		return
+
+	var transition_spawn := GameManager.consume_transition_spawn(scene_path)
 	if transition_spawn != Vector2.ZERO:
 		global_position = transition_spawn
 		_snap_camera_to_player()
 		call_deferred("_snap_camera_to_player")
 		return
 
-	if GameManager.has_checkpoint_for_scene(_get_scene_path()):
+	if GameManager.has_stage_entry_spawn(scene_path):
+		global_position = GameManager.get_stage_entry_spawn(scene_path)
+		_snap_camera_to_player()
+		call_deferred("_snap_camera_to_player")
+		return
+
+	if GameManager.has_checkpoint_for_scene(scene_path):
 		global_position = GameManager.checkpoint_pos
 		_snap_camera_to_player()
 		call_deferred("_snap_camera_to_player")

@@ -6,6 +6,7 @@ const KEY_FRAME_COUNT: int = 12
 
 
 func _ready() -> void:
+	z_index = 2
 	sprite_frames = _create_key_frames()
 	animation = &"default"
 	scale = Vector2(0.75, 0.75)

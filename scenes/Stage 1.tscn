@@ -17,7 +17,11 @@
 [ext_resource type="PackedScene" uid="uid://cjpkiuse3h107" path="res://scenes/Key.tscn" id="14_key"]
 [ext_resource type="Script" uid="uid://2hvqa77f5wd6" path="res://scenes/key_progress_label.gd" id="15_key_hud"]
 [ext_resource type="Script" uid="uid://8i7p6qherh48" path="res://scenes/heart_hud.gd" id="16_heart_hud"]
-[ext_resource type="Script" path="res://scenes/key_progress_icon.gd" id="17_key_icon"]
+[ext_resource type="Script" uid="uid://dl27ueqba1fsf" path="res://scenes/key_progress_icon.gd" id="17_key_icon"]
+[ext_resource type="PackedScene" uid="uid://b3hbd26ybl0k2" path="res://scenes/Chest.tscn" id="18_chest"]
+[ext_resource type="PackedScene" uid="uid://dqi6v1pqyrgt3" path="res://sprites/stone_npc.tscn" id="19_stone_npc"]
+[ext_resource type="Script" uid="uid://h0ly6pwsscpd" path="res://scenes/staff_progress_icon.gd" id="20_staff_icon"]
+[ext_resource type="Script" uid="uid://cg4gyderc5xjn" path="res://scenes/staff_progress_label.gd" id="21_staff_hud"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d52mq"]
 texture = ExtResource("8_rxh2b")
@@ -1231,7 +1235,7 @@ size = Vector2(26, 33)
 [node name="Node2D2" type="Node2D" unique_id=508283502]
 
 [node name="Player" parent="." unique_id=1103805679 instance=ExtResource("3_vqe5t")]
-position = Vector2(33, -39)
+position = Vector2(1988, 21)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=299597785]
 position = Vector2(0, -23)
@@ -1244,11 +1248,13 @@ position_smoothing_enabled = true
 
 [node name="KeyHUD" type="CanvasLayer" parent="." unique_id=1073612671]
 
-[node name="KeyProgressIcon" type="AnimatedSprite2D" parent="KeyHUD"]
+[node name="KeyProgressIcon" type="AnimatedSprite2D" parent="KeyHUD" unique_id=176479671]
+z_index = 2
 position = Vector2(24, 22)
 script = ExtResource("17_key_icon")
 
 [node name="KeyProgressLabel" type="Label" parent="KeyHUD" unique_id=2112520844]
+z_index = 2
 offset_left = 44.0
 offset_top = 10.0
 offset_right = 114.0
@@ -1263,6 +1269,24 @@ script = ExtResource("15_key_hud")
 [node name="HeartHUD" type="Node2D" parent="KeyHUD" unique_id=1627235999]
 position = Vector2(92, 24)
 script = ExtResource("16_heart_hud")
+
+[node name="StaffProgressIcon" type="Sprite2D" parent="KeyHUD" unique_id=2052128314]
+z_index = 1
+position = Vector2(24, 50)
+script = ExtResource("20_staff_icon")
+
+[node name="StaffProgressLabel" type="Label" parent="KeyHUD" unique_id=1785486588]
+z_index = 1
+offset_left = 44.0
+offset_top = 42.0
+offset_right = 114.0
+offset_bottom = 66.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "0/4"
+script = ExtResource("21_staff_hud")
 
 [node name="Enemy" parent="." unique_id=193293020 instance=ExtResource("5_028ra")]
 z_index = 1
@@ -1338,7 +1362,11 @@ energy = 0.67
 blend_mode = 1
 
 [node name="Checkpoint" parent="." unique_id=474978073 instance=ExtResource("9_028ra")]
-position = Vector2(112, -20)
+position = Vector2(385, 34)
+
+[node name="StoneNpc" parent="." unique_id=1828148474 instance=ExtResource("19_stone_npc")]
+position = Vector2(126, 0)
+scale = Vector2(0.45, 0.45)
 
 [node name="IncubusBoy" type="Sprite2D" parent="." unique_id=915546879]
 position = Vector2(1728, 172.65694)
@@ -1354,10 +1382,13 @@ script = ExtResource("11_dialogue")
 shape = SubResource("RectangleShape2D_incubus_dialogue")
 
 [node name="Checkpoint2" parent="." unique_id=1340323433 instance=ExtResource("9_028ra")]
-position = Vector2(1923, 161)
+position = Vector2(1876, 164)
 
 [node name="Key" parent="." unique_id=1889487418 instance=ExtResource("14_key")]
-position = Vector2(1589, 153)
+position = Vector2(2517, -37)
+
+[node name="Chest" parent="." unique_id=767645480 instance=ExtResource("18_chest")]
+position = Vector2(1592, 184)
 
 [node name="killzone" parent="." unique_id=1808961880 instance=ExtResource("10_gmwhc")]
 position = Vector2(1156, 765)
@@ -1373,6 +1404,9 @@ script = ExtResource("12_stage_entrance")
 target_scene = "res://scenes/Stage 2.tscn"
 prompt_text = "Press E to Enter Dungeon"
 requires_key = true
+requires_staff_piece = true
+use_target_spawn = true
+target_spawn_position = Vector2(68, -6)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stage2Entrance" unique_id=34167530]
 shape = SubResource("RectangleShape2D_du160")

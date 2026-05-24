@@ -15,6 +15,13 @@
 [ext_resource type="PackedScene" uid="uid://mtbc4kh4gs74" path="res://scripts/torch.tscn" id="13_xpqbk"]
 [ext_resource type="Script" uid="uid://cjkfdkxsx5vbm" path="res://scenes/stage_entrance.gd" id="14_32mc4"]
 [ext_resource type="PackedScene" uid="uid://mmu30t3wc4f" path="res://scenes/platform move cave.tscn" id="15_81715"]
+[ext_resource type="PackedScene" uid="uid://b3hbd26ybl0k2" path="res://scenes/Chest.tscn" id="16_chest"]
+[ext_resource type="Script" uid="uid://8i7p6qherh48" path="res://scenes/heart_hud.gd" id="17_heart_hud"]
+[ext_resource type="Script" uid="uid://h0ly6pwsscpd" path="res://scenes/staff_progress_icon.gd" id="18_staff_icon"]
+[ext_resource type="Script" uid="uid://cg4gyderc5xjn" path="res://scenes/staff_progress_label.gd" id="19_staff_hud"]
+[ext_resource type="PackedScene" uid="uid://cjpkiuse3h107" path="res://scenes/Key.tscn" id="20_key"]
+[ext_resource type="Script" uid="uid://2hvqa77f5wd6" path="res://scenes/key_progress_label.gd" id="21_key_hud"]
+[ext_resource type="Script" uid="uid://dl27ueqba1fsf" path="res://scenes/key_progress_icon.gd" id="22_key_icon"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ito5k"]
 texture = ExtResource("1_h8uo5")
@@ -384,6 +391,55 @@ texture = ExtResource("10_2vuif")
 [node name="Checkpoint" parent="." unique_id=474978073 instance=ExtResource("11_324fe")]
 position = Vector2(1758, 542)
 
+[node name="Key" parent="." unique_id=172877213 instance=ExtResource("20_key")]
+position = Vector2(107, 835)
+
+[node name="Chest" parent="." unique_id=1447113559 instance=ExtResource("16_chest")]
+position = Vector2(1332, 447)
+staff_piece_number = 3
+
+[node name="KeyHUD" type="CanvasLayer" parent="." unique_id=1447831166]
+
+[node name="KeyProgressIcon" type="AnimatedSprite2D" parent="KeyHUD" unique_id=787394694]
+z_index = 2
+position = Vector2(24, 22)
+script = ExtResource("22_key_icon")
+
+[node name="KeyProgressLabel" type="Label" parent="KeyHUD" unique_id=1984842221]
+z_index = 2
+offset_left = 44.0
+offset_top = 10.0
+offset_right = 114.0
+offset_bottom = 34.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "0/1"
+script = ExtResource("21_key_hud")
+
+[node name="HeartHUD" type="Node2D" parent="KeyHUD" unique_id=127930290]
+position = Vector2(92, 24)
+script = ExtResource("17_heart_hud")
+
+[node name="StaffProgressIcon" type="Sprite2D" parent="KeyHUD" unique_id=719190601]
+z_index = 1
+position = Vector2(24, 50)
+script = ExtResource("18_staff_icon")
+
+[node name="StaffProgressLabel" type="Label" parent="KeyHUD" unique_id=200527463]
+z_index = 1
+offset_left = 44.0
+offset_top = 42.0
+offset_right = 114.0
+offset_bottom = 66.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "0/4"
+script = ExtResource("19_staff_hud")
+
 [node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="." unique_id=925005207]
 stream = ExtResource("12_vlj8k")
 volume_db = -24.676
@@ -420,6 +476,7 @@ collision_mask = 2
 script = ExtResource("14_32mc4")
 target_scene = "res://scenes/Scene 4.tscn"
 prompt_text = "Press E to Enter"
+requires_staff_piece = true
 use_target_spawn = true
 target_spawn_position = Vector2(64, -30)
 
