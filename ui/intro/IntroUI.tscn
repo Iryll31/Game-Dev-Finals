@@ -1,0 +1,112 @@
+[gd_scene format=3 uid="uid://3hraj2dcs8w3"]
+
+[ext_resource type="Script" uid="uid://dpywxxttmfp4b" path="res://ui/intro/IntroCutsceneManager.gd" id="1_manager"]
+[ext_resource type="Script" uid="uid://bittoiww5u0qv" path="res://ui/intro/TypewriterText.gd" id="2_typewriter"]
+[ext_resource type="FontFile" uid="uid://dc4qub26mvfeg" path="res://fonts/PixelOperator8.ttf" id="3_font"]
+
+[node name="IntroUI" type="Control" unique_id=824210713]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_manager")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1401488549]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.025, 0.04, 0.055, 1)
+
+[node name="CrystalGlow" type="ColorRect" parent="." unique_id=134596143]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.04, 0.34, 0.36, 0.22)
+
+[node name="Content" type="MarginContainer" parent="." unique_id=1533202134]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 48.0
+offset_top = 48.0
+offset_right = -48.0
+offset_bottom = -48.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBox" type="VBoxContainer" parent="Content" unique_id=2131693797]
+layout_mode = 2
+theme_override_constants/separation = 24
+alignment = 2
+
+[node name="TitleLabel" type="Label" parent="Content/VBox" unique_id=1695308979]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.83, 0.95, 1, 1)
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 34
+text = "DUNGEON"
+horizontal_alignment = 1
+
+[node name="StoryPanel" type="PanelContainer" parent="Content/VBox" unique_id=1954459864]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="StoryMargin" type="MarginContainer" parent="Content/VBox/StoryPanel" unique_id=1096230171]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 20
+
+[node name="StoryLabel" type="RichTextLabel" parent="Content/VBox/StoryPanel/StoryMargin" unique_id=1377446326]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(0.93, 0.96, 1, 1)
+theme_override_fonts/normal_font = ExtResource("3_font")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+fit_content = true
+scroll_active = false
+script = ExtResource("2_typewriter")
+characters_per_second = 34.0
+
+[node name="ContinueButton" type="Button" parent="Content/VBox" unique_id=1718412352]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(170, 44)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_fonts/font = ExtResource("3_font")
+theme_override_font_sizes/font_size = 18
+text = "Continue"
+
+[node name="IntroBGMPlayer" type="AudioStreamPlayer" parent="." unique_id=76983265]
+unique_name_in_owner = true
+volume_db = -15.07
+
+[node name="IntroVoicePlayer" type="AudioStreamPlayer" parent="." unique_id=1587206470]
+unique_name_in_owner = true
+volume_db = 16.421
+
+[node name="FinalHoldTimer" type="Timer" parent="." unique_id=588518922]
+unique_name_in_owner = true
+one_shot = true
+
+[node name="FadeOverlay" type="ColorRect" parent="." unique_id=1719907069]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)

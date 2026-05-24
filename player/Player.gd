@@ -33,6 +33,7 @@ var _spawn_position : Vector2 = Vector2.ZERO
 
 # ────────────────────────────────────────────────────────────────────────
 func _ready() -> void:
+	add_to_group("player")
 	_projectile_packed = load(PROJECTILE_SCENE)
 	_spawn_position    = global_position
 	# Connect GameManager signals
@@ -117,6 +118,7 @@ func take_damage(amount: int = 1) -> void:
 		return
 	GameManager.take_damage(amount)
 	AudioManager.play_sfx("player_hit")
+	_flash_screen()
 	_start_invincibility()
 
 func _start_invincibility() -> void:
@@ -141,6 +143,8 @@ func _check_fell_off_screen() -> void:
 
 func _die() -> void:
 	AudioManager.play_sfx("player_death")
+	_flash_screen()
+	_flash_hurt()
 	# GameManager handles life deduction and game_over signal
 	GameManager.take_damage(GameManager.health)  # kill instantly
 
@@ -153,4 +157,23 @@ func respawn() -> void:
 
 func _on_game_over() -> void:
 	# Handled by UI — change scene to game-over screen
-	get_tree().change_scene_to_file("res://ui/GameOver.tscn")
+	call_deferred("_go_to_game_over_screen")
+
+
+func _go_to_game_over_screen() -> void:
+	if get_tree() != null:
+		get_tree().change_scene_to_file("res://ui/GameOver.tscn")
+
+
+func _flash_screen() -> void:
+	var layer := CanvasLayer.new()
+	layer.layer = 100
+	var flash := ColorRect.new()
+	flash.color = Color(1.0, 1.0, 1.0, 0.8)
+	flash.set_anchors_preset(Control.PRESET_FULL_RECT)
+	layer.add_child(flash)
+	get_tree().root.add_child(layer)
+
+	var tween := layer.create_tween()
+	tween.tween_property(flash, "color:a", 0.0, 0.18)
+	tween.tween_callback(layer.queue_free)

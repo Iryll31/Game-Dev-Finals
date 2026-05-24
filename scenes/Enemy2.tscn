@@ -1,0 +1,60 @@
+[gd_scene format=3 uid="uid://c5jxjeyaja2gr"]
+
+[ext_resource type="Script" uid="uid://bi5hwfncjt23k" path="res://scripts/enemy2.gd" id="1_i1eqr"]
+[ext_resource type="Texture2D" uid="uid://brrjs0niuyoy7" path="res://sprites/Neco-Arc.png" id="2_wna3i"]
+[ext_resource type="PackedScene" uid="uid://vv1wwllpiw0w" path="res://scenes/killzone.tscn" id="3_wna3i"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xemqh"]
+atlas = ExtResource("2_wna3i")
+region = Rect2(128, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_damwt"]
+atlas = ExtResource("2_wna3i")
+region = Rect2(256, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjf8o"]
+atlas = ExtResource("2_wna3i")
+region = Rect2(384, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oavmn"]
+atlas = ExtResource("2_wna3i")
+region = Rect2(512, 640, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8ra4u"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xemqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_damwt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjf8o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oavmn")
+}],
+"loop": true,
+"name": &"default",
+"speed": 100.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xemqh"]
+size = Vector2(15.213198, 20.786802)
+
+[node name="Enemy2" type="AnimatedSprite2D" unique_id=532411968]
+script = ExtResource("1_i1eqr")
+
+[node name="NecoArc" type="AnimatedSprite2D" parent="." unique_id=232310005]
+position = Vector2(0, -13)
+scale = Vector2(0.20312501, 0.20312501)
+sprite_frames = SubResource("SpriteFrames_8ra4u")
+autoplay = "default"
+frame_progress = 0.87813336
+
+[node name="killzone" parent="." unique_id=1808961880 instance=ExtResource("3_wna3i")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killzone" unique_id=1880249907]
+position = Vector2(0, -12)
+shape = SubResource("RectangleShape2D_xemqh")

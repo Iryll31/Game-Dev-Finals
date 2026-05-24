@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cykt4f3j4w0py"
+path="res://.godot/imported/shadow realm music.mp3-16d5f164ba7d24ffc22bd5bf857f06de.mp3str"
+
+[deps]
+
+source_file="res://audio/bgm/shadow realm music.mp3"
+dest_files=["res://.godot/imported/shadow realm music.mp3-16d5f164ba7d24ffc22bd5bf857f06de.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

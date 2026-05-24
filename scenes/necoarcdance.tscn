@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://m37owyqnepsp"]
+
+[ext_resource type="Texture2D" uid="uid://brrjs0niuyoy7" path="res://sprites/Neco-Arc.png" id="1_j1m7f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3442t"]
+atlas = ExtResource("1_j1m7f")
+region = Rect2(768, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wp3b4"]
+atlas = ExtResource("1_j1m7f")
+region = Rect2(896, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcute"]
+atlas = ExtResource("1_j1m7f")
+region = Rect2(1024, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6cs3"]
+atlas = ExtResource("1_j1m7f")
+region = Rect2(1152, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wglw"]
+atlas = ExtResource("1_j1m7f")
+region = Rect2(1280, 640, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tbflu"]
+atlas = ExtResource("1_j1m7f")
+region = Rect2(1408, 640, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xg2xh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3442t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wp3b4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcute")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6cs3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wglw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tbflu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 9.0
+}]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" unique_id=1187062994]
+scale = Vector2(0.23437499, 0.23437497)
+sprite_frames = SubResource("SpriteFrames_xg2xh")
+autoplay = "default"
+frame_progress = 0.4983788

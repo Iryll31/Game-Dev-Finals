@@ -1,0 +1,50 @@
+[gd_scene format=3 uid="uid://bq7xm3hudw4fy"]
+
+[ext_resource type="Script" uid="uid://dl27ueqba1fsf" path="res://scenes/key_progress_icon.gd" id="1_key_icon"]
+[ext_resource type="Script" uid="uid://2hvqa77f5wd6" path="res://scenes/key_progress_label.gd" id="2_key_hud"]
+[ext_resource type="Script" uid="uid://8i7p6qherh48" path="res://scenes/heart_hud.gd" id="3_heart_hud"]
+[ext_resource type="Script" uid="uid://h0ly6pwsscpd" path="res://scenes/staff_progress_icon.gd" id="4_staff_icon"]
+[ext_resource type="Script" uid="uid://cg4gyderc5xjn" path="res://scenes/staff_progress_label.gd" id="5_staff_hud"]
+
+[node name="GameHUD" type="CanvasLayer"]
+layer = 100
+
+[node name="KeyProgressIcon" type="AnimatedSprite2D" parent="."]
+z_index = 2
+position = Vector2(24, 22)
+script = ExtResource("1_key_icon")
+
+[node name="KeyProgressLabel" type="Label" parent="."]
+z_index = 2
+offset_left = 44.0
+offset_top = 10.0
+offset_right = 114.0
+offset_bottom = 34.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "0/1"
+script = ExtResource("2_key_hud")
+
+[node name="HeartHUD" type="Node2D" parent="."]
+position = Vector2(92, 24)
+script = ExtResource("3_heart_hud")
+
+[node name="StaffProgressIcon" type="Sprite2D" parent="."]
+z_index = 1
+position = Vector2(24, 50)
+script = ExtResource("4_staff_icon")
+
+[node name="StaffProgressLabel" type="Label" parent="."]
+z_index = 1
+offset_left = 44.0
+offset_top = 42.0
+offset_right = 114.0
+offset_bottom = 66.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_font_sizes/font_size = 18
+text = "0/4"
+script = ExtResource("5_staff_hud")
