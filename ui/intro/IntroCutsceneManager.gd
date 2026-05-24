@@ -19,20 +19,20 @@ const INTRO_VOICE_PATH := "res://audio/voice/intro/VoiceOver.mp3"
 @onready var final_hold_timer: Timer = %FinalHoldTimer
 
 var _intro_cues: Array[Dictionary] = [
-	{"time": 0.0, "text": "Long ago, deep beneath the surface, there existed a magical dungeon kingdom powered by glowing crystals and eternal blue flames."},
-	{"time": 8.0, "text": "For centuries, the great wizard Aldric protected the dungeon and kept the ancient darkness sealed away."},
-	{"time": 14.0, "text": "But peace did not last."},
-	{"time": 16.0, "text": "The inhabitants of this dungeon came without warning. They took Aldric's magical staff and scattered its pieces across the dungeon floors."},
-	{"time": 25.0, "text": "Without the wizard's full power, corruption spread throughout the kingdom."},
-	{"time": 30.0, "text": "The peaceful Hollows became twisted monsters."},
-	{"time": 33.0, "text": "The crystals dimmed."},
-	{"time": 35.0, "text": "And darkness consumed the dungeon floor by floor."},
-	{"time": 39.0, "text": "In the highest forgotten chamber, a small guardian machine suddenly awakened."},
-	{"time": 44.0, "text": "Its name was UNIT."},
-	{"time": 46.0, "text": "Created long ago by Aldric himself, UNIT was built for one purpose:"},
-	{"time": 50.0, "text": "Find the staff pieces."},
-	{"time": 51.0, "text": "Restore the dungeon."},
-	{"time": 52.0, "text": "Save the kingdom."}
+	{"time": 0.0, "text": "Long ago, deep beneath the surface, there existed a magical dungeon kingdom powered by glowing crystals and eternal blue flames"},
+	{"time": 10.0, "text": "For centuries, the great wizard Aldric protected the kingdom and kept the ancient darkness sealed away."},
+	{"time": 18.0, "text": "But peace did not last"},
+	{"time": 22.0, "text": "The inhabitants of this dungeon came without warning. They took Aldric's magical staff and scattered its pieces across the dungeon floors"},
+	{"time": 31.0, "text": "Without the wizard's full power, corruption spread throughout the kingdom"},
+	{"time": 36.0, "text": "The peaceful Hollows became twisted monsters"},
+	{"time": 40.0, "text": "The crystals dimmed"},
+	{"time": 42.0, "text": "And darkness consumed the dungeon floor by floor"},
+	{"time": 46.0, "text": "In the highest forgotten chamber, a hero has been called."},
+	{"time": 51.0, "text": "You"},
+	{"time": 53.0, "text": "Called forth by Aldric himself, you have been given a quest:"},
+	{"time": 58.0, "text": "Find the staff pieces."},
+	{"time": 60.0, "text": "Restore the dungeon."},
+	{"time": 63.0, "text": "Save the kingdom."}
 ]
 
 var _dialogue_index := 0
