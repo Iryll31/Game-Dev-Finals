@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://c2flydglvydlf"]
+
+[ext_resource type="Script" uid="uid://dioqbormhj2t0" path="res://scripts/horse.gd" id="1_dwiow"]
+[ext_resource type="Texture2D" uid="uid://bxygcpsptlnnt" path="res://sprites/horse.png" id="2_6ghsp"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ayhrb"]
+size = Vector2(269.99994, 289.99997)
+
+[node name="horse1" type="Area2D" unique_id=1754286561]
+collision_mask = 2
+script = ExtResource("1_dwiow")
+
+[node name="Horse" type="Sprite2D" parent="." unique_id=833899342]
+position = Vector2(1.9073486e-06, 5.9604645e-08)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_6ghsp")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1997314071]
+position = Vector2(1.9073486e-06, 5.9604645e-08)
+scale = Vector2(0.19999999, 0.19999999)
+shape = SubResource("RectangleShape2D_ayhrb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

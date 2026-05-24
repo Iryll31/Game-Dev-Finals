@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://djgsmf3jwt0ot"]
+
+[ext_resource type="Texture2D" uid="uid://sp7gp6e1n3x8" path="res://sprites/Smoke-Sheet.png" id="1_4bm2l"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kxc2h"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(0, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_upkgb"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(80, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h0ck0"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(160, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ymu7i"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(240, 0, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_re34x"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(0, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2cyb"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(80, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5iqqe"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(160, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_foodd"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(240, 80, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cv1p"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(0, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_giyh6"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(80, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvg0y"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(160, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v508m"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(240, 160, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s4arj"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(0, 240, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oc2gr"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(80, 240, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w3o4y"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(160, 240, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bioqt"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(240, 240, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sdddg"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(0, 320, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5psny"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(80, 320, 80, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vm2ge"]
+atlas = ExtResource("1_4bm2l")
+region = Rect2(160, 320, 80, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_amcng"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kxc2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_upkgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h0ck0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ymu7i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_re34x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n2cyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5iqqe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_foodd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cv1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_giyh6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvg0y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v508m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s4arj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oc2gr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w3o4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bioqt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sdddg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5psny")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vm2ge")
+}],
+"loop": false,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="SmokeChest" type="Node2D" unique_id=519246814]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=981346701]
+position = Vector2(-7, -19)
+sprite_frames = SubResource("SpriteFrames_amcng")
+frame_progress = 0.079379186

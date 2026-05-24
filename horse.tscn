@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://s1u5is53ewj8"]
+
+[ext_resource type="Texture2D" uid="uid://bxygcpsptlnnt" path="res://sprites/horse.png" id="1_eplvg"]
+
+[node name="horse" type="CharacterBody2D" unique_id=828265820]
+
+[node name="Horse" type="Sprite2D" parent="." unique_id=833899342]
+position = Vector2(24, 1)
+texture = ExtResource("1_eplvg")

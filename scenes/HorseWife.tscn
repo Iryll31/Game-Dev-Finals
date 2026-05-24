@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://yroi5rltrqra"]
+
+[ext_resource type="Texture2D" uid="uid://bih2h11583l5u" path="res://sprites/HorseWife.webp" id="2_hnprd"]
+
+[sub_resource type="GDScript" id="GDScript_gye5r"]
+
+[node name="HorseWife" type="Area2D" unique_id=859580319]
+modulate = Color(1, 1, 1, 0.22745098)
+script = SubResource("GDScript_gye5r")
+
+[node name="HorseWife" type="Sprite2D" parent="." unique_id=589921915]
+position = Vector2(-1, -6)
+scale = Vector2(0.16064256, 0.16064256)
+texture = ExtResource("2_hnprd")

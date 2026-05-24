@@ -1,0 +1,50 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqi6v1pqyrgt3"]
+
+[ext_resource type="Texture2D" uid="uid://bxox3baahl4ro" path="res://sprites/stone npc.png" id="1_mj088"]
+[ext_resource type="Script" path="res://scenes/stone_npc_dialogue.gd" id="2_dialogue"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxrvv"]
+atlas = ExtResource("1_mj088")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ttl7"]
+atlas = ExtResource("1_mj088")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j6lu1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxrvv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ttl7")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dialogue"]
+size = Vector2(72, 66)
+
+[node name="StoneNpc" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.7, 0.7)
+sprite_frames = SubResource("SpriteFrames_j6lu1")
+autoplay = "default"
+
+[node name="Dialogue" type="Area2D" parent="."]
+collision_mask = 2
+script = ExtResource("2_dialogue")
+intro_text = "UNIT... you have awakened. Good. I feared the darkness had already taken everything"
+followup_text = "I am Aldric. Or rather — what remains of me in these stones. The witch Morrga came without warning. She took my staff and scattered it across these floors."
+quest_text = "I built you to protect this place. Now I need you to protect me. Find the four pieces of my staff. Restore it. Only then can the corruption be undone."
+dialogue_font_size = 14
+prompt_font_size = 12
+dialogue_label_size = Vector2(360, 96)
+dialogue_label_offset = Vector2(-180, -88)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dialogue"]
+shape = SubResource("RectangleShape2D_dialogue")

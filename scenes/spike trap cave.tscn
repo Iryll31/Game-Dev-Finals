@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://durvhqhkd52ux"]
+
+[ext_resource type="Script" uid="uid://bfp7athlmqmx2" path="res://scripts/killzone.gd" id="1_vy51w"]
+[ext_resource type="PackedScene" uid="uid://cnoiov2keku7v" path="res://map 1 test.tscn" id="2_yak4u"]
+[ext_resource type="TileSet" uid="uid://cgv2xbc3osq1i" path="res://dungeontileset.tres" id="3_h6kya"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq75y"]
+size = Vector2(44, 23)
+
+[node name="SpikeTrap" type="Area2D" unique_id=1423772989]
+collision_mask = 2
+script = ExtResource("1_vy51w")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1151559310]
+position = Vector2(24, 13.5)
+shape = SubResource("RectangleShape2D_dq75y")
+
+[node name="TileMap2" parent="." unique_id=1672127788 instance=ExtResource("2_yak4u")]
+position = Vector2(0, 0)
+tile_set = ExtResource("3_h6kya")
+layer_0/tile_data = PackedInt32Array(0, 262144, 13, 1, 262144, 13)
+
+[node name="Timer" type="Timer" parent="." unique_id=101826620]
+wait_time = 0.2
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,5 +1,14 @@
-Timer
-Marker2D
 CollisionShape2D
 AnimatedSprite2D
-CharacterBody2D
+AudioStreamPlayer2D
+VideoStreamPlayer
+Sprite2D
+Parallax2D
+ParallaxLayer
+ParallaxBackground
+TileMap
+Node2D
+Node3D
+AudioListener2D
+TileMapLayer
+DirectionalLight2D
