@@ -22,17 +22,17 @@ var _intro_cues: Array[Dictionary] = [
 	{"time": 0.0, "text": "Long ago, deep beneath the surface, there existed a magical dungeon kingdom powered by glowing crystals and eternal blue flames."},
 	{"time": 8.0, "text": "For centuries, the great wizard Aldric protected the dungeon and kept the ancient darkness sealed away."},
 	{"time": 14.0, "text": "But peace did not last."},
-	{"time": 17.0, "text": "A power-hungry witch named Morrga betrayed Aldric and stole his magical staff, breaking it into four scattered pieces hidden across the dungeon floors."},
-	{"time": 26.0, "text": "Without the wizard's protection, corruption spread throughout the kingdom."},
+	{"time": 16.0, "text": "The inhabitants of this dungeon came without warning. They took Aldric's magical staff and scattered its pieces across the dungeon floors."},
+	{"time": 25.0, "text": "Without the wizard's full power, corruption spread throughout the kingdom."},
 	{"time": 30.0, "text": "The peaceful Hollows became twisted monsters."},
-	{"time": 34.0, "text": "The crystals dimmed."},
-	{"time": 36.0, "text": "And darkness consumed the dungeon floor by floor."},
+	{"time": 33.0, "text": "The crystals dimmed."},
+	{"time": 35.0, "text": "And darkness consumed the dungeon floor by floor."},
 	{"time": 39.0, "text": "In the highest forgotten chamber, a small guardian machine suddenly awakened."},
 	{"time": 44.0, "text": "Its name was UNIT."},
 	{"time": 46.0, "text": "Created long ago by Aldric himself, UNIT was built for one purpose:"},
-	{"time": 51.0, "text": "Find the staff."},
-	{"time": 52.0, "text": "Free the wizard."},
-	{"time": 54.0, "text": "End the witch."}
+	{"time": 50.0, "text": "Find the staff pieces."},
+	{"time": 51.0, "text": "Restore the dungeon."},
+	{"time": 52.0, "text": "Save the kingdom."}
 ]
 
 var _dialogue_index := 0
